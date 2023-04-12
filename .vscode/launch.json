@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bin/project.elf",
+            "name": "Debug (OpenOCD)",
+            "configFiles": [
+                "${env:HOME}/proyectos/mse/final/muju/externals/base/soc/lpc43xx/openocd/lpc4337_new.cfg"
+            ],
+        }
+    ]
+}

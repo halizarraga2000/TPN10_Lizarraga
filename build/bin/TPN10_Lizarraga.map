@@ -184,8 +184,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/obj/src/digital.o
  .text.Chip_GPIO_ReadPortBit
                 0x0000000000000000       0x34 build/obj/src/digital.o
- .text.Chip_GPIO_SetPinToggle
-                0x0000000000000000       0x32 build/obj/src/digital.o
  .text.DigitalInputGetState
                 0x0000000000000000       0x3c build/obj/src/digital.o
  .text.DigitalInputHasChanged
@@ -194,12 +192,6 @@ Discarded input sections
                 0x0000000000000000       0x46 build/obj/src/digital.o
  .text.DigitalInputHasDeactivated
                 0x0000000000000000       0x4c build/obj/src/digital.o
- .text.DigitalOutputActivate
-                0x0000000000000000       0x24 build/obj/src/digital.o
- .text.DigitalOutputDeactivate
-                0x0000000000000000       0x24 build/obj/src/digital.o
- .text.DigitalOutputToggle
-                0x0000000000000000       0x24 build/obj/src/digital.o
  .debug_macro   0x0000000000000000      0xa9c build/obj/src/digital.o
  .debug_macro   0x0000000000000000       0x22 build/obj/src/digital.o
  .debug_macro   0x0000000000000000       0x22 build/obj/src/digital.o
@@ -506,8 +498,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/lib/modules/freertos.a(event_groups.o)
  .text.xEventGroupSync
                 0x0000000000000000      0x15c build/lib/modules/freertos.a(event_groups.o)
- .text.xEventGroupWaitBits
-                0x0000000000000000      0x19c build/lib/modules/freertos.a(event_groups.o)
  .text.xEventGroupClearBits
                 0x0000000000000000       0x70 build/lib/modules/freertos.a(event_groups.o)
  .text.xEventGroupClearBitsFromISR
@@ -522,8 +512,6 @@ Discarded input sections
                 0x0000000000000000       0x1a build/lib/modules/freertos.a(event_groups.o)
  .text.vEventGroupClearBitsCallback
                 0x0000000000000000       0x1a build/lib/modules/freertos.a(event_groups.o)
- .text.prvTestWaitCondition
-                0x0000000000000000       0x44 build/lib/modules/freertos.a(event_groups.o)
  .text.xEventGroupSetBitsFromISR
                 0x0000000000000000       0x28 build/lib/modules/freertos.a(event_groups.o)
  .text.uxEventGroupGetNumber
@@ -913,8 +901,6 @@ Discarded input sections
                 0x0000000000000000      0x128 build/lib/modules/freertos.a(tasks.o)
  .text.xTaskDelayUntil
                 0x0000000000000000       0xfc build/lib/modules/freertos.a(tasks.o)
- .text.vTaskDelay
-                0x0000000000000000       0x68 build/lib/modules/freertos.a(tasks.o)
  .text.eTaskGetState
                 0x0000000000000000       0xf4 build/lib/modules/freertos.a(tasks.o)
  .text.uxTaskPriorityGet
@@ -947,8 +933,6 @@ Discarded input sections
                 0x0000000000000000      0x11c build/lib/modules/freertos.a(tasks.o)
  .text.xTaskCatchUpTicks
                 0x0000000000000000       0x50 build/lib/modules/freertos.a(tasks.o)
- .text.vTaskPlaceOnUnorderedEventList
-                0x0000000000000000       0x78 build/lib/modules/freertos.a(tasks.o)
  .text.vTaskRemoveFromUnorderedEventList
                 0x0000000000000000       0xc4 build/lib/modules/freertos.a(tasks.o)
  .text.vTaskSetTimeOutState
@@ -969,8 +953,6 @@ Discarded input sections
                 0x0000000000000000       0xec build/lib/modules/freertos.a(tasks.o)
  .text.vTaskPriorityDisinheritAfterTimeout
                 0x0000000000000000      0x11c build/lib/modules/freertos.a(tasks.o)
- .text.uxTaskResetEventItemValue
-                0x0000000000000000       0x30 build/lib/modules/freertos.a(tasks.o)
  .text.pvTaskIncrementMutexHeldCount
                 0x0000000000000000       0x28 build/lib/modules/freertos.a(tasks.o)
  .text.ulTaskGenericNotifyTake
@@ -3955,19 +3937,19 @@ END GROUP
                 0x000000001a000040                . = ALIGN (0x4)
                 0x000000001a000040                __section_table_start = .
                 0x000000001a000040                __data_section_table = .
-                0x000000001a000040        0x4 LONG 0x1a00ed50 LOADADDR (.data)
+                0x000000001a000040        0x4 LONG 0x1a00f1a0 LOADADDR (.data)
                 0x000000001a000044        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a000048        0x4 LONG 0x40 SIZEOF (.data)
-                0x000000001a00004c        0x4 LONG 0x1a004d50 LOADADDR (.data_RAM2)
+                0x000000001a00004c        0x4 LONG 0x1a0051a0 LOADADDR (.data_RAM2)
                 0x000000001a000050        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000054        0x4 LONG 0xa000 SIZEOF (.data_RAM2)
-                0x000000001a000058        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM3)
+                0x000000001a000058        0x4 LONG 0x1a00f1a0 LOADADDR (.data_RAM3)
                 0x000000001a00005c        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000060        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000064        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM4)
+                0x000000001a000064        0x4 LONG 0x1a00f1a0 LOADADDR (.data_RAM4)
                 0x000000001a000068        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a00006c        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000070        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM5)
+                0x000000001a000070        0x4 LONG 0x1a00f1a0 LOADADDR (.data_RAM5)
                 0x000000001a000074        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a000078        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a00007c                __data_section_table_end = .
@@ -4024,7 +4006,7 @@ END GROUP
                 0x000000001a00015a                PROVIDE (__init_array_end = .)
                 0x000000001a00015c                . = ALIGN (0x4)
 
-.text           0x000000001a000160     0x4be8
+.text           0x000000001a000160     0x5038
  *(.text*)
  .text.Chip_SCU_PinMuxSet
                 0x000000001a000160       0x34 build/obj/src/bsp.o
@@ -4047,472 +4029,500 @@ END GROUP
                 0x000000001a000422       0x40 build/obj/src/digital.o
  .text.Chip_GPIO_SetPinDIR
                 0x000000001a000462       0x42 build/obj/src/digital.o
+ .text.Chip_GPIO_SetPinToggle
+                0x000000001a0004a4       0x32 build/obj/src/digital.o
+ *fill*         0x000000001a0004d6        0x2 
  .text.DigitalInputAllocate
-                0x000000001a0004a4       0x6c build/obj/src/digital.o
-                0x000000001a0004a4                DigitalInputAllocate
+                0x000000001a0004d8       0x6c build/obj/src/digital.o
+                0x000000001a0004d8                DigitalInputAllocate
  .text.DigitalOutputAllocate
-                0x000000001a000510       0x6c build/obj/src/digital.o
-                0x000000001a000510                DigitalOutputAllocate
+                0x000000001a000544       0x6c build/obj/src/digital.o
+                0x000000001a000544                DigitalOutputAllocate
  .text.DigitalInputCreate
-                0x000000001a00057c       0x50 build/obj/src/digital.o
-                0x000000001a00057c                DigitalInputCreate
+                0x000000001a0005b0       0x50 build/obj/src/digital.o
+                0x000000001a0005b0                DigitalInputCreate
  .text.DigitalOutputCreate
-                0x000000001a0005cc       0x58 build/obj/src/digital.o
-                0x000000001a0005cc                DigitalOutputCreate
- .text.Azul     0x000000001a000624       0x14 build/obj/src/main.o
-                0x000000001a000624                Azul
- .text.Rojo     0x000000001a000638       0x14 build/obj/src/main.o
-                0x000000001a000638                Rojo
+                0x000000001a000600       0x58 build/obj/src/digital.o
+                0x000000001a000600                DigitalOutputCreate
+ .text.DigitalOutputActivate
+                0x000000001a000658       0x24 build/obj/src/digital.o
+                0x000000001a000658                DigitalOutputActivate
+ .text.DigitalOutputDeactivate
+                0x000000001a00067c       0x24 build/obj/src/digital.o
+                0x000000001a00067c                DigitalOutputDeactivate
+ .text.DigitalOutputToggle
+                0x000000001a0006a0       0x24 build/obj/src/digital.o
+                0x000000001a0006a0                DigitalOutputToggle
+ .text.Azul     0x000000001a0006c4       0x54 build/obj/src/main.o
+                0x000000001a0006c4                Azul
+ .text.Rojo     0x000000001a000718       0x38 build/obj/src/main.o
+                0x000000001a000718                Rojo
  .text.Amarillo
-                0x000000001a00064c       0x14 build/obj/src/main.o
-                0x000000001a00064c                Amarillo
- .text.Verde    0x000000001a000660       0x14 build/obj/src/main.o
-                0x000000001a000660                Verde
- .text.Teclado  0x000000001a000674       0x14 build/obj/src/main.o
-                0x000000001a000674                Teclado
- .text.main     0x000000001a000688       0xc0 build/obj/src/main.o
-                0x000000001a000688                main
+                0x000000001a000750       0x5c build/obj/src/main.o
+                0x000000001a000750                Amarillo
+ .text.Verde    0x000000001a0007ac       0x20 build/obj/src/main.o
+                0x000000001a0007ac                Verde
+ .text.Teclado  0x000000001a0007cc       0x14 build/obj/src/main.o
+                0x000000001a0007cc                Teclado
+ .text.main     0x000000001a0007e0       0xc0 build/obj/src/main.o
+                0x000000001a0007e0                main
  .text.xEventGroupCreate
-                0x000000001a000748       0x2e build/lib/modules/freertos.a(event_groups.o)
-                0x000000001a000748                xEventGroupCreate
+                0x000000001a0008a0       0x2e build/lib/modules/freertos.a(event_groups.o)
+                0x000000001a0008a0                xEventGroupCreate
+ *fill*         0x000000001a0008ce        0x2 
+ .text.xEventGroupWaitBits
+                0x000000001a0008d0      0x19c build/lib/modules/freertos.a(event_groups.o)
+                0x000000001a0008d0                xEventGroupWaitBits
+ .text.prvTestWaitCondition
+                0x000000001a000a6c       0x44 build/lib/modules/freertos.a(event_groups.o)
  .text.vListInitialise
-                0x000000001a000776       0x40 build/lib/modules/freertos.a(list.o)
-                0x000000001a000776                vListInitialise
+                0x000000001a000ab0       0x40 build/lib/modules/freertos.a(list.o)
+                0x000000001a000ab0                vListInitialise
  .text.vListInitialiseItem
-                0x000000001a0007b6       0x1a build/lib/modules/freertos.a(list.o)
-                0x000000001a0007b6                vListInitialiseItem
+                0x000000001a000af0       0x1a build/lib/modules/freertos.a(list.o)
+                0x000000001a000af0                vListInitialiseItem
  .text.vListInsertEnd
-                0x000000001a0007d0       0x48 build/lib/modules/freertos.a(list.o)
-                0x000000001a0007d0                vListInsertEnd
+                0x000000001a000b0a       0x48 build/lib/modules/freertos.a(list.o)
+                0x000000001a000b0a                vListInsertEnd
  .text.vListInsert
-                0x000000001a000818       0x72 build/lib/modules/freertos.a(list.o)
-                0x000000001a000818                vListInsert
+                0x000000001a000b52       0x72 build/lib/modules/freertos.a(list.o)
+                0x000000001a000b52                vListInsert
  .text.uxListRemove
-                0x000000001a00088a       0x54 build/lib/modules/freertos.a(list.o)
-                0x000000001a00088a                uxListRemove
+                0x000000001a000bc4       0x54 build/lib/modules/freertos.a(list.o)
+                0x000000001a000bc4                uxListRemove
  .text.xTaskCreate
-                0x000000001a0008de       0x82 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a0008de                xTaskCreate
+                0x000000001a000c18       0x82 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000c18                xTaskCreate
  .text.prvInitialiseNewTask
-                0x000000001a000960      0x12c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000c9a      0x12c build/lib/modules/freertos.a(tasks.o)
+ *fill*         0x000000001a000dc6        0x2 
  .text.prvAddNewTaskToReadyList
-                0x000000001a000a8c       0xdc build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000dc8       0xdc build/lib/modules/freertos.a(tasks.o)
+ .text.vTaskDelay
+                0x000000001a000ea4       0x68 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000ea4                vTaskDelay
  .text.vTaskStartScheduler
-                0x000000001a000b68       0xa4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000b68                vTaskStartScheduler
+                0x000000001a000f0c       0xa4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000f0c                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x000000001a000c0c       0x1c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000c0c                vTaskSuspendAll
+                0x000000001a000fb0       0x1c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000fb0                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x000000001a000c28      0x138 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000c28                xTaskResumeAll
+                0x000000001a000fcc      0x138 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000fcc                xTaskResumeAll
  .text.xTaskGetTickCount
-                0x000000001a000d60       0x20 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000d60                xTaskGetTickCount
+                0x000000001a001104       0x20 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001104                xTaskGetTickCount
  .text.xTaskIncrementTick
-                0x000000001a000d80      0x170 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000d80                xTaskIncrementTick
+                0x000000001a001124      0x170 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001124                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x000000001a000ef0       0xb8 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000ef0                vTaskSwitchContext
+                0x000000001a001294       0xb8 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001294                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x000000001a000fa8       0x48 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000fa8                vTaskPlaceOnEventList
+                0x000000001a00134c       0x48 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a00134c                vTaskPlaceOnEventList
+ .text.vTaskPlaceOnUnorderedEventList
+                0x000000001a001394       0x78 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001394                vTaskPlaceOnUnorderedEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x000000001a000ff0       0x58 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000ff0                vTaskPlaceOnEventListRestricted
+                0x000000001a00140c       0x58 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a00140c                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x000000001a001048       0xc4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001048                xTaskRemoveFromEventList
+                0x000000001a001464       0xc4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001464                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x000000001a00110c       0x2c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a00110c                vTaskInternalSetTimeOutState
+                0x000000001a001528       0x2c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001528                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x000000001a001138       0xcc build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001138                xTaskCheckForTimeOut
+                0x000000001a001554       0xcc build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001554                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x000000001a001204       0x18 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001204                vTaskMissedYield
+                0x000000001a001620       0x18 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001620                vTaskMissedYield
  .text.prvIdleTask
-                0x000000001a00121c       0x30 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001638       0x30 build/lib/modules/freertos.a(tasks.o)
  .text.prvInitialiseTaskLists
-                0x000000001a00124c       0x80 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001668       0x80 build/lib/modules/freertos.a(tasks.o)
  .text.prvCheckTasksWaitingTermination
-                0x000000001a0012cc       0x5c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0016e8       0x5c build/lib/modules/freertos.a(tasks.o)
  .text.prvDeleteTCB
-                0x000000001a001328       0x20 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001744       0x20 build/lib/modules/freertos.a(tasks.o)
  .text.prvResetNextTaskUnblockTime
-                0x000000001a001348       0x38 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001764       0x38 build/lib/modules/freertos.a(tasks.o)
  .text.xTaskGetSchedulerState
-                0x000000001a001380       0x3c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001380                xTaskGetSchedulerState
+                0x000000001a00179c       0x3c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a00179c                xTaskGetSchedulerState
  .text.xTaskPriorityDisinherit
-                0x000000001a0013bc       0xf4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a0013bc                xTaskPriorityDisinherit
+                0x000000001a0017d8       0xf4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0017d8                xTaskPriorityDisinherit
+ .text.uxTaskResetEventItemValue
+                0x000000001a0018cc       0x30 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0018cc                uxTaskResetEventItemValue
  .text.prvAddCurrentTaskToDelayedList
-                0x000000001a0014b0       0xcc build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0018fc       0xcc build/lib/modules/freertos.a(tasks.o)
  .text.xTimerCreateTimerTask
-                0x000000001a00157c       0x64 build/lib/modules/freertos.a(timers.o)
-                0x000000001a00157c                xTimerCreateTimerTask
+                0x000000001a0019c8       0x64 build/lib/modules/freertos.a(timers.o)
+                0x000000001a0019c8                xTimerCreateTimerTask
  .text.xTimerGenericCommand
-                0x000000001a0015e0       0x9c build/lib/modules/freertos.a(timers.o)
-                0x000000001a0015e0                xTimerGenericCommand
+                0x000000001a001a2c       0x9c build/lib/modules/freertos.a(timers.o)
+                0x000000001a001a2c                xTimerGenericCommand
  .text.prvProcessExpiredTimer
-                0x000000001a00167c       0x98 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001ac8       0x98 build/lib/modules/freertos.a(timers.o)
  .text.prvTimerTask
-                0x000000001a001714       0x24 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001b60       0x24 build/lib/modules/freertos.a(timers.o)
  .text.prvProcessTimerOrBlockTask
-                0x000000001a001738       0x9c build/lib/modules/freertos.a(timers.o)
+                0x000000001a001b84       0x9c build/lib/modules/freertos.a(timers.o)
  .text.prvGetNextExpireTime
-                0x000000001a0017d4       0x48 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001c20       0x48 build/lib/modules/freertos.a(timers.o)
  .text.prvSampleTimeNow
-                0x000000001a00181c       0x40 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001c68       0x40 build/lib/modules/freertos.a(timers.o)
  .text.prvInsertTimerInActiveList
-                0x000000001a00185c       0x84 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001ca8       0x84 build/lib/modules/freertos.a(timers.o)
  .text.prvProcessReceivedCommands
-                0x000000001a0018e0      0x1c4 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001d2c      0x1c4 build/lib/modules/freertos.a(timers.o)
  .text.prvSwitchTimerLists
-                0x000000001a001aa4       0xc8 build/lib/modules/freertos.a(timers.o)
+                0x000000001a001ef0       0xc8 build/lib/modules/freertos.a(timers.o)
  .text.prvCheckForValidListAndQueue
-                0x000000001a001b6c       0x6c build/lib/modules/freertos.a(timers.o)
+                0x000000001a001fb8       0x6c build/lib/modules/freertos.a(timers.o)
  .text.pxPortInitialiseStack
-                0x000000001a001bd8       0x68 build/lib/modules/freertos.a(port.o)
-                0x000000001a001bd8                pxPortInitialiseStack
+                0x000000001a002024       0x68 build/lib/modules/freertos.a(port.o)
+                0x000000001a002024                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x000000001a001c40       0x58 build/lib/modules/freertos.a(port.o)
- *fill*         0x000000001a001c98        0x8 
+                0x000000001a00208c       0x58 build/lib/modules/freertos.a(port.o)
+ *fill*         0x000000001a0020e4        0xc 
  .text.SVC_Handler
-                0x000000001a001ca0       0x28 build/lib/modules/freertos.a(port.o)
-                0x000000001a001ca0                SVC_Handler
+                0x000000001a0020f0       0x28 build/lib/modules/freertos.a(port.o)
+                0x000000001a0020f0                SVC_Handler
  .text.prvPortStartFirstTask
-                0x000000001a001cc8       0x2c build/lib/modules/freertos.a(port.o)
+                0x000000001a002118       0x2c build/lib/modules/freertos.a(port.o)
  .text.xPortStartScheduler
-                0x000000001a001cf4      0x164 build/lib/modules/freertos.a(port.o)
-                0x000000001a001cf4                xPortStartScheduler
+                0x000000001a002144      0x164 build/lib/modules/freertos.a(port.o)
+                0x000000001a002144                xPortStartScheduler
  .text.vPortEnterCritical
-                0x000000001a001e58       0x60 build/lib/modules/freertos.a(port.o)
-                0x000000001a001e58                vPortEnterCritical
+                0x000000001a0022a8       0x60 build/lib/modules/freertos.a(port.o)
+                0x000000001a0022a8                vPortEnterCritical
  .text.vPortExitCritical
-                0x000000001a001eb8       0x54 build/lib/modules/freertos.a(port.o)
-                0x000000001a001eb8                vPortExitCritical
- *fill*         0x000000001a001f0c        0x4 
+                0x000000001a002308       0x54 build/lib/modules/freertos.a(port.o)
+                0x000000001a002308                vPortExitCritical
+ *fill*         0x000000001a00235c        0x4 
  .text.PendSV_Handler
-                0x000000001a001f10       0x68 build/lib/modules/freertos.a(port.o)
-                0x000000001a001f10                PendSV_Handler
+                0x000000001a002360       0x68 build/lib/modules/freertos.a(port.o)
+                0x000000001a002360                PendSV_Handler
  .text.SysTick_Handler
-                0x000000001a001f78       0x44 build/lib/modules/freertos.a(port.o)
-                0x000000001a001f78                SysTick_Handler
+                0x000000001a0023c8       0x44 build/lib/modules/freertos.a(port.o)
+                0x000000001a0023c8                SysTick_Handler
  .text.vPortSetupTimerInterrupt
-                0x000000001a001fbc       0x48 build/lib/modules/freertos.a(port.o)
-                0x000000001a001fbc                vPortSetupTimerInterrupt
+                0x000000001a00240c       0x48 build/lib/modules/freertos.a(port.o)
+                0x000000001a00240c                vPortSetupTimerInterrupt
  .text.vPortEnableVFP
-                0x000000001a002004       0x18 build/lib/modules/freertos.a(port.o)
+                0x000000001a002454       0x18 build/lib/modules/freertos.a(port.o)
  .text.vPortValidateInterruptPriority
-                0x000000001a00201c       0x80 build/lib/modules/freertos.a(port.o)
-                0x000000001a00201c                vPortValidateInterruptPriority
+                0x000000001a00246c       0x80 build/lib/modules/freertos.a(port.o)
+                0x000000001a00246c                vPortValidateInterruptPriority
  .text.pvPortMalloc
-                0x000000001a00209c      0x1c0 build/lib/modules/freertos.a(heap_4.o)
-                0x000000001a00209c                pvPortMalloc
+                0x000000001a0024ec      0x1c0 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a0024ec                pvPortMalloc
  .text.vPortFree
-                0x000000001a00225c       0xc4 build/lib/modules/freertos.a(heap_4.o)
-                0x000000001a00225c                vPortFree
+                0x000000001a0026ac       0xc4 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a0026ac                vPortFree
  .text.prvHeapInit
-                0x000000001a002320       0xc4 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a002770       0xc4 build/lib/modules/freertos.a(heap_4.o)
  .text.prvInsertBlockIntoFreeList
-                0x000000001a0023e4       0xb4 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a002834       0xb4 build/lib/modules/freertos.a(heap_4.o)
  .text.xQueueGenericReset
-                0x000000001a002498       0xd0 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002498                xQueueGenericReset
+                0x000000001a0028e8       0xd0 build/lib/modules/freertos.a(queue.o)
+                0x000000001a0028e8                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x000000001a002568       0xbe build/lib/modules/freertos.a(queue.o)
-                0x000000001a002568                xQueueGenericCreate
+                0x000000001a0029b8       0xbe build/lib/modules/freertos.a(queue.o)
+                0x000000001a0029b8                xQueueGenericCreate
  .text.prvInitialiseNewQueue
-                0x000000001a002626       0x46 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002a76       0x46 build/lib/modules/freertos.a(queue.o)
  .text.xQueueGenericSend
-                0x000000001a00266c      0x1fc build/lib/modules/freertos.a(queue.o)
-                0x000000001a00266c                xQueueGenericSend
+                0x000000001a002abc      0x1fc build/lib/modules/freertos.a(queue.o)
+                0x000000001a002abc                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x000000001a002868      0x154 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002868                xQueueGenericSendFromISR
+                0x000000001a002cb8      0x154 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002cb8                xQueueGenericSendFromISR
  .text.xQueueReceive
-                0x000000001a0029bc      0x1c0 build/lib/modules/freertos.a(queue.o)
-                0x000000001a0029bc                xQueueReceive
+                0x000000001a002e0c      0x1c0 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002e0c                xQueueReceive
  .text.prvCopyDataToQueue
-                0x000000001a002b7c       0xd4 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002fcc       0xd4 build/lib/modules/freertos.a(queue.o)
  .text.prvCopyDataFromQueue
-                0x000000001a002c50       0x4c build/lib/modules/freertos.a(queue.o)
+                0x000000001a0030a0       0x4c build/lib/modules/freertos.a(queue.o)
  .text.prvUnlockQueue
-                0x000000001a002c9c       0xa4 build/lib/modules/freertos.a(queue.o)
+                0x000000001a0030ec       0xa4 build/lib/modules/freertos.a(queue.o)
  .text.prvIsQueueEmpty
-                0x000000001a002d40       0x2c build/lib/modules/freertos.a(queue.o)
+                0x000000001a003190       0x2c build/lib/modules/freertos.a(queue.o)
  .text.prvIsQueueFull
-                0x000000001a002d6c       0x30 build/lib/modules/freertos.a(queue.o)
+                0x000000001a0031bc       0x30 build/lib/modules/freertos.a(queue.o)
  .text.vQueueAddToRegistry
-                0x000000001a002d9c       0x54 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002d9c                vQueueAddToRegistry
+                0x000000001a0031ec       0x54 build/lib/modules/freertos.a(queue.o)
+                0x000000001a0031ec                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x000000001a002df0       0x68 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002df0                vQueueWaitForMessageRestricted
+                0x000000001a003240       0x68 build/lib/modules/freertos.a(queue.o)
+                0x000000001a003240                vQueueWaitForMessageRestricted
  .text.initialise_monitor_handles
-                0x000000001a002e58        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e58                initialise_monitor_handles
- .text._fini    0x000000001a002e66        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e66                _fini
- .text._init    0x000000001a002e74        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e74                _init
- *fill*         0x000000001a002e82        0x2 
+                0x000000001a0032a8        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a0032a8                initialise_monitor_handles
+ .text._fini    0x000000001a0032b6        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a0032b6                _fini
+ .text._init    0x000000001a0032c4        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a0032c4                _init
+ *fill*         0x000000001a0032d2        0x2 
  .text.Reset_Handler
-                0x000000001a002e84       0xcc build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e84                Reset_Handler
+                0x000000001a0032d4       0xcc build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a0032d4                Reset_Handler
  .text.SystemCoreClockUpdate
-                0x000000001a002f50       0x18 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
-                0x000000001a002f50                SystemCoreClockUpdate
- .text.ABS      0x000000001a002f68       0x22 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- *fill*         0x000000001a002f8a        0x2 
+                0x000000001a0033a0       0x18 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+                0x000000001a0033a0                SystemCoreClockUpdate
+ .text.ABS      0x000000001a0033b8       0x22 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ *fill*         0x000000001a0033da        0x2 
  .text.pll_calc_divs
-                0x000000001a002f8c      0x124 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0033dc      0x124 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.pll_get_frac
-                0x000000001a0030b0      0x180 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003500      0x180 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_GetDivRate
-                0x000000001a003230       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003680       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_FindBaseClock
-                0x000000001a003270       0x90 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0036c0       0x90 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x000000001a003300       0x70 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003300                Chip_Clock_EnableCrystal
+                0x000000001a003750       0x70 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003750                Chip_Clock_EnableCrystal
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a003370       0xd8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003370                Chip_Clock_CalcMainPLLValue
+                0x000000001a0037c0       0xd8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0037c0                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a003448       0xbc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003448                Chip_Clock_GetMainPLLHz
+                0x000000001a003898       0xbc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003898                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDividerSource
-                0x000000001a003504       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003504                Chip_Clock_GetDividerSource
+                0x000000001a003954       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003954                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x000000001a003544       0x38 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003544                Chip_Clock_GetDividerDivisor
+                0x000000001a003994       0x38 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003994                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a00357c      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a00357c                Chip_Clock_GetClockInputHz
+                0x000000001a0039cc      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0039cc                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a0036bc       0x24 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0036bc                Chip_Clock_GetBaseClocktHz
+                0x000000001a003b0c       0x24 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003b0c                Chip_Clock_GetBaseClocktHz
  .text.Chip_Clock_SetBaseClock
-                0x000000001a0036e0       0x9c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0036e0                Chip_Clock_SetBaseClock
+                0x000000001a003b30       0x9c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003b30                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a00377c       0x4c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a00377c                Chip_Clock_GetBaseClock
+                0x000000001a003bcc       0x4c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003bcc                Chip_Clock_GetBaseClock
  .text.Chip_Clock_EnableOpts
-                0x000000001a0037c8       0x7c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0037c8                Chip_Clock_EnableOpts
+                0x000000001a003c18       0x7c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003c18                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a003844       0x60 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003844                Chip_Clock_Enable
+                0x000000001a003c94       0x60 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003c94                Chip_Clock_Enable
  .text.Chip_Clock_GetRate
-                0x000000001a0038a4       0x88 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0038a4                Chip_Clock_GetRate
+                0x000000001a003cf4       0x88 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003cf4                Chip_Clock_GetRate
  .text.SCB_GetFPUType
-                0x000000001a00392c       0x2c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x000000001a003d7c       0x2c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
  .text.SystemInit
-                0x000000001a003958       0x38 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
-                0x000000001a003958                SystemInit
+                0x000000001a003da8       0x38 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x000000001a003da8                SystemInit
  .text.Chip_SCU_I2C0PinConfig
-                0x000000001a003990       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003de0       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinState
-                0x000000001a0039b0       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003e00       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinDIROutput
-                0x000000001a0039e8       0x3e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003e38       0x3e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinDIRInput
-                0x000000001a003a26       0x40 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003e76       0x40 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_Enable
-                0x000000001a003a66       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003eb6       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_SetFormat
-                0x000000001a003a86       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003ed6       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_Set_Mode
-                0x000000001a003ab8       0x26 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003f08       0x26 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_UART_TXEnable
-                0x000000001a003ade       0x1a build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003f2e       0x1a build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_UART_ConfigData
-                0x000000001a003af8       0x1c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003f48       0x1c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_LED_Init
-                0x000000001a003b14       0x54 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003f64       0x54 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_TEC_Init
-                0x000000001a003b68       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003fb8       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_GPIO_Init
-                0x000000001a003bac       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003ffc       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_I2C_Init
-                0x000000001a003bf0       0x24 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004040       0x24 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_SPI_Init
-                0x000000001a003c14       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004064       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_ADC_Init
-                0x000000001a003c4c       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a00409c       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_Debug_Init
-                0x000000001a003c84       0x2c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a003c84                Board_Debug_Init
+                0x000000001a0040d4       0x2c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a0040d4                Board_Debug_Init
  .text.Board_Init
-                0x000000001a003cb0       0x30 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a003cb0                Board_Init
+                0x000000001a004100       0x30 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004100                Board_Init
  .text.Chip_SCU_PinMuxSet
-                0x000000001a003ce0       0x34 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004130       0x34 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Chip_SCU_SetPinMuxing
-                0x000000001a003d14       0x4c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004164       0x4c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Chip_CREG_SetFlashAcceleration
-                0x000000001a003d60       0x54 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a0041b0       0x54 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Board_SetupMuxing
-                0x000000001a003db4       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003db4                Board_SetupMuxing
+                0x000000001a004204       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004204                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a003dc8       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003dc8                Board_SetupClocking
+                0x000000001a004218       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004218                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a003e3c       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003e3c                Board_SystemInit
+                0x000000001a00428c       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a00428c                Board_SystemInit
  .text.getFullConvClk
-                0x000000001a003e50       0x10 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a0042a0       0x10 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .text.Chip_ADC_GetClockIndex
-                0x000000001a003e60       0x2c build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a0042b0       0x2c build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .text.getClkDiv
-                0x000000001a003e8c       0x66 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- *fill*         0x000000001a003ef2        0x2 
+                0x000000001a0042dc       0x66 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ *fill*         0x000000001a004342        0x2 
  .text.Chip_ADC_Init
-                0x000000001a003ef4       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003ef4                Chip_ADC_Init
+                0x000000001a004344       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a004344                Chip_ADC_Init
  .text.Chip_ADC_SetSampleRate
-                0x000000001a003f7c       0x64 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003f7c                Chip_ADC_SetSampleRate
+                0x000000001a0043cc       0x64 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a0043cc                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a003fe0       0x2a build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003fe0                Chip_ADC_SetResolution
+                0x000000001a004430       0x2a build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a004430                Chip_ADC_SetResolution
  .text.Chip_GPIO_Init
-                0x000000001a00400a       0x14 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
-                0x000000001a00400a                Chip_GPIO_Init
- *fill*         0x000000001a00401e        0x2 
+                0x000000001a00445a       0x14 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+                0x000000001a00445a                Chip_GPIO_Init
+ *fill*         0x000000001a00446e        0x2 
  .text.enableClk
-                0x000000001a004020       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004470       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .text.getClkRate
-                0x000000001a004050       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a0044a0       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .text.Chip_I2C_EventHandler
-                0x000000001a004080       0x4c build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a004080                Chip_I2C_EventHandler
+                0x000000001a0044d0       0x4c build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a0044d0                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a0040cc       0x34 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a0040cc                Chip_I2C_Init
+                0x000000001a00451c       0x34 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a00451c                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a004100       0x68 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a004100                Chip_I2C_SetClockRate
+                0x000000001a004550       0x68 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004550                Chip_I2C_SetClockRate
  .text.Chip_SSP_SetFormat
-                0x000000001a004168       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0045b8       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_Set_Mode
-                0x000000001a00419a       0x26 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0045ea       0x26 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_GetClockIndex
-                0x000000001a0041c0       0x2c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a004610       0x2c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a0041ec       0x30 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a00463c       0x30 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_SetClockRate
-                0x000000001a00421c       0x36 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a00421c                Chip_SSP_SetClockRate
+                0x000000001a00466c       0x36 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a00466c                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x000000001a004252       0x74 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a004252                Chip_SSP_SetBitRate
- *fill*         0x000000001a0042c6        0x2 
+                0x000000001a0046a2       0x74 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0046a2                Chip_SSP_SetBitRate
+ *fill*         0x000000001a004716        0x2 
  .text.Chip_SSP_Init
-                0x000000001a0042c8       0x4c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a0042c8                Chip_SSP_Init
+                0x000000001a004718       0x4c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a004718                Chip_SSP_Init
  .text.Chip_Clock_DisableMainPLL
-                0x000000001a004314       0x20 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a004764       0x20 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_SetupMainPLL
-                0x000000001a004334       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a004784       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_MainPLLLocked
-                0x000000001a00437c       0x24 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a0047cc       0x24 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_SetupCoreClock
-                0x000000001a0043a0      0x148 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
-                0x000000001a0043a0                Chip_SetupCoreClock
+                0x000000001a0047f0      0x148 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a0047f0                Chip_SetupCoreClock
  .text.Chip_UART_TXDisable
-                0x000000001a0044e8       0x1a build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004938       0x1a build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetupFIFOS
-                0x000000001a004502       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004952       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_ConfigData
-                0x000000001a00451e       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a00496e       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_EnableDivisorAccess
-                0x000000001a00453a       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a00498a       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_DisableDivisorAccess
-                0x000000001a00455a       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a0049aa       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetDivisorLatches
-                0x000000001a00457a       0x28 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
- *fill*         0x000000001a0045a2        0x2 
+                0x000000001a0049ca       0x28 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ *fill*         0x000000001a0049f2        0x2 
  .text.Chip_UART_GetIndex
-                0x000000001a0045a4       0x6c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a0049f4       0x6c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_Init
-                0x000000001a004610       0x88 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a004610                Chip_UART_Init
+                0x000000001a004a60       0x88 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004a60                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x000000001a004698      0x180 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a004698                Chip_UART_SetBaudFDR
- .text          0x000000001a004818       0x30 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a004818                __aeabi_uldivmod
- .text          0x000000001a004848      0x2d0 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
-                0x000000001a004848                __udivmoddi4
- .text          0x000000001a004b18        0x4 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
-                0x000000001a004b18                __aeabi_ldiv0
-                0x000000001a004b18                __aeabi_idiv0
+                0x000000001a004ae8      0x180 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004ae8                Chip_UART_SetBaudFDR
+ .text          0x000000001a004c68       0x30 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a004c68                __aeabi_uldivmod
+ .text          0x000000001a004c98      0x2d0 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x000000001a004c98                __udivmoddi4
+ .text          0x000000001a004f68        0x4 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
+                0x000000001a004f68                __aeabi_ldiv0
+                0x000000001a004f68                __aeabi_idiv0
  .text.__libc_init_array
-                0x000000001a004b1c       0x48 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
-                0x000000001a004b1c                __libc_init_array
- .text.memcpy   0x000000001a004b64       0x1c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
-                0x000000001a004b64                memcpy
- .text.memset   0x000000001a004b80       0x10 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
-                0x000000001a004b80                memset
+                0x000000001a004f6c       0x48 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
+                0x000000001a004f6c                __libc_init_array
+ .text.memcpy   0x000000001a004fb4       0x1c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+                0x000000001a004fb4                memcpy
+ .text.memset   0x000000001a004fd0       0x10 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
+                0x000000001a004fd0                memset
  *(.rodata .rodata.* .constdata .constdata.*)
- .rodata        0x000000001a004b90       0x2c build/obj/src/main.o
- .rodata        0x000000001a004bbc        0x5 build/lib/modules/freertos.a(tasks.o)
- *fill*         0x000000001a004bc1        0x3 
- .rodata        0x000000001a004bc4        0xd build/lib/modules/freertos.a(timers.o)
- *fill*         0x000000001a004bd1        0x3 
+ .rodata        0x000000001a004fe0       0x2c build/obj/src/main.o
+ .rodata        0x000000001a00500c        0x5 build/lib/modules/freertos.a(tasks.o)
+ *fill*         0x000000001a005011        0x3 
+ .rodata        0x000000001a005014        0xd build/lib/modules/freertos.a(timers.o)
+ *fill*         0x000000001a005021        0x3 
  .rodata.periph_to_base
-                0x000000001a004bd4       0x6c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .rodata        0x000000001a004c40        0x6 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- *fill*         0x000000001a004c46        0x2 
+                0x000000001a005024       0x6c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .rodata        0x000000001a005090        0x6 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ *fill*         0x000000001a005096        0x2 
  .rodata.ExtRateIn
-                0x000000001a004c48        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a004c48                ExtRateIn
+                0x000000001a005098        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a005098                ExtRateIn
  .rodata.OscRateIn
-                0x000000001a004c4c        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a004c4c                OscRateIn
+                0x000000001a00509c        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a00509c                OscRateIn
  .rodata.GpioLeds
-                0x000000001a004c50        0xc build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a0050a0        0xc build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .rodata.GpioButtons
-                0x000000001a004c5c        0x8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a0050ac        0x8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .rodata.GpioPorts
-                0x000000001a004c64       0x12 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- *fill*         0x000000001a004c76        0x2 
+                0x000000001a0050b4       0x12 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ *fill*         0x000000001a0050c6        0x2 
  .rodata.InitClkStates
-                0x000000001a004c78        0x4 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a0050c8        0x4 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .rodata.pinmuxing
-                0x000000001a004c7c       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a0050cc       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .rodata.InitClkStates
-                0x000000001a004cf0       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a005140       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .rodata.UART_PClock
-                0x000000001a004d38        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a005188        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .rodata.UART_BClock
-                0x000000001a004d40        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a004d48                . = ALIGN (0x4)
+                0x000000001a005190        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a005198                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a004d48                __exidx_start = .
+                0x000000001a005198                __exidx_start = .
 
-.ARM.exidx      0x000000001a004d48        0x8
+.ARM.exidx      0x000000001a005198        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000001a004d48        0x8 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
-                0x000000001a004d50                __exidx_end = .
-                0x000000001a004d50                _etext = .
+ .ARM.exidx     0x000000001a005198        0x8 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x000000001a0051a0                __exidx_end = .
+                0x000000001a0051a0                _etext = .
 
-.rel.dyn        0x000000001a004d50        0x0
- .rel.iplt      0x000000001a004d50        0x0 build/obj/src/bsp.o
+.rel.dyn        0x000000001a0051a0        0x0
+ .rel.iplt      0x000000001a0051a0        0x0 build/obj/src/bsp.o
 
-.data_RAM2      0x0000000010080000     0xa000 load address 0x000000001a004d50
+.data_RAM2      0x0000000010080000     0xa000 load address 0x000000001a0051a0
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -4522,7 +4532,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x000000001008a000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a00ed50
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a00f1a0
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -4530,7 +4540,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a00ed50
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a00f1a0
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -4538,7 +4548,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a00ed50
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a00f1a0
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -4552,7 +4562,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x40 load address 0x000000001a00ed50
+.data           0x0000000010000000       0x40 load address 0x000000001a00f1a0
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -4567,7 +4577,7 @@ END GROUP
                 0x0000000010000040                . = ALIGN (0x4)
                 0x0000000010000040                _edata = .
 
-.igot.plt       0x0000000010000040        0x0 load address 0x000000001a00ed90
+.igot.plt       0x0000000010000040        0x0 load address 0x000000001a00f1e0
  .igot.plt      0x0000000010000040        0x0 build/obj/src/bsp.o
 
 .bss_RAM2       0x000000001008a000        0x0
@@ -4716,34 +4726,34 @@ END GROUP
                 0x0000000010000264                _end_noinit = .
                 [!provide]                        PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff4b86                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff4736                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(build/bin/TPN10_Lizarraga.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000    0x125ac
+.debug_info     0x0000000000000000    0x1260f
  .debug_info    0x0000000000000000      0xfab build/obj/src/bsp.o
  .debug_info    0x0000000000000fab      0x6d8 build/obj/src/digital.o
- .debug_info    0x0000000000001683      0x76b build/obj/src/main.o
- .debug_info    0x0000000000001dee      0x9be build/lib/modules/freertos.a(event_groups.o)
- .debug_info    0x00000000000027ac      0x2d8 build/lib/modules/freertos.a(list.o)
- .debug_info    0x0000000000002a84     0x26d4 build/lib/modules/freertos.a(tasks.o)
- .debug_info    0x0000000000005158     0x135e build/lib/modules/freertos.a(timers.o)
- .debug_info    0x00000000000064b6      0x9cb build/lib/modules/freertos.a(port.o)
- .debug_info    0x0000000000006e81      0x98f build/lib/modules/freertos.a(heap_4.o)
- .debug_info    0x0000000000007810     0x1c97 build/lib/modules/freertos.a(queue.o)
- .debug_info    0x00000000000094a7      0x603 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_info    0x0000000000009aaa      0x2b5 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_info    0x0000000000009d5f      0xa65 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_info    0x000000000000a7c4     0x1678 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_info    0x000000000000be3c      0x33e build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_info    0x000000000000c17a     0x14c8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_info    0x000000000000d642      0xbce build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_info    0x000000000000e210      0x9c1 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_info    0x000000000000ebd1      0x1e1 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_info    0x000000000000edb2     0x10f4 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_info    0x000000000000fea6      0xc7d build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_info    0x0000000000010b23      0x921 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_info    0x0000000000011444     0x1168 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_info    0x0000000000001683      0x7ce build/obj/src/main.o
+ .debug_info    0x0000000000001e51      0x9be build/lib/modules/freertos.a(event_groups.o)
+ .debug_info    0x000000000000280f      0x2d8 build/lib/modules/freertos.a(list.o)
+ .debug_info    0x0000000000002ae7     0x26d4 build/lib/modules/freertos.a(tasks.o)
+ .debug_info    0x00000000000051bb     0x135e build/lib/modules/freertos.a(timers.o)
+ .debug_info    0x0000000000006519      0x9cb build/lib/modules/freertos.a(port.o)
+ .debug_info    0x0000000000006ee4      0x98f build/lib/modules/freertos.a(heap_4.o)
+ .debug_info    0x0000000000007873     0x1c97 build/lib/modules/freertos.a(queue.o)
+ .debug_info    0x000000000000950a      0x603 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_info    0x0000000000009b0d      0x2b5 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_info    0x0000000000009dc2      0xa65 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_info    0x000000000000a827     0x1678 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_info    0x000000000000be9f      0x33e build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_info    0x000000000000c1dd     0x14c8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_info    0x000000000000d6a5      0xbce build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_info    0x000000000000e273      0x9c1 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_info    0x000000000000ec34      0x1e1 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_info    0x000000000000ee15     0x10f4 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_info    0x000000000000ff09      0xc7d build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_info    0x0000000000010b86      0x921 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_info    0x00000000000114a7     0x1168 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
 .debug_abbrev   0x0000000000000000     0x2ec2
  .debug_abbrev  0x0000000000000000      0x286 build/obj/src/bsp.o
@@ -4980,77 +4990,77 @@ LOAD linker stubs
  .debug_macro   0x000000000000c391      0x315 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .debug_macro   0x000000000000c6a6      0x315 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_line     0x0000000000000000    0x12bcb
+.debug_line     0x0000000000000000    0x12c0f
  .debug_line    0x0000000000000000      0x92c build/obj/src/bsp.o
  .debug_line    0x000000000000092c      0xa5b build/obj/src/digital.o
- .debug_line    0x0000000000001387      0xb33 build/obj/src/main.o
- .debug_line    0x0000000000001eba      0xf04 build/lib/modules/freertos.a(event_groups.o)
- .debug_line    0x0000000000002dbe      0xb75 build/lib/modules/freertos.a(list.o)
- .debug_line    0x0000000000003933     0x21b7 build/lib/modules/freertos.a(tasks.o)
- .debug_line    0x0000000000005aea     0x115f build/lib/modules/freertos.a(timers.o)
- .debug_line    0x0000000000006c49      0xd57 build/lib/modules/freertos.a(port.o)
- .debug_line    0x00000000000079a0      0xdc0 build/lib/modules/freertos.a(heap_4.o)
- .debug_line    0x0000000000008760     0x1a83 build/lib/modules/freertos.a(queue.o)
- .debug_line    0x000000000000a1e3      0x9a6 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_line    0x000000000000ab89      0x20d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_line    0x000000000000ad96      0x819 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_line    0x000000000000b5af     0x1116 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_line    0x000000000000c6c5      0x965 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_line    0x000000000000d02a      0xdba build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_line    0x000000000000dde4      0xa2d build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_line    0x000000000000e811      0x9f9 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_line    0x000000000000f20a      0x783 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_line    0x000000000000f98d      0xe2b build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_line    0x00000000000107b8      0xdf9 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_line    0x00000000000115b1      0x901 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_line    0x0000000000011eb2      0xd19 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_line    0x0000000000001387      0xb77 build/obj/src/main.o
+ .debug_line    0x0000000000001efe      0xf04 build/lib/modules/freertos.a(event_groups.o)
+ .debug_line    0x0000000000002e02      0xb75 build/lib/modules/freertos.a(list.o)
+ .debug_line    0x0000000000003977     0x21b7 build/lib/modules/freertos.a(tasks.o)
+ .debug_line    0x0000000000005b2e     0x115f build/lib/modules/freertos.a(timers.o)
+ .debug_line    0x0000000000006c8d      0xd57 build/lib/modules/freertos.a(port.o)
+ .debug_line    0x00000000000079e4      0xdc0 build/lib/modules/freertos.a(heap_4.o)
+ .debug_line    0x00000000000087a4     0x1a83 build/lib/modules/freertos.a(queue.o)
+ .debug_line    0x000000000000a227      0x9a6 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_line    0x000000000000abcd      0x20d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_line    0x000000000000adda      0x819 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_line    0x000000000000b5f3     0x1116 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_line    0x000000000000c709      0x965 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_line    0x000000000000d06e      0xdba build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_line    0x000000000000de28      0xa2d build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_line    0x000000000000e855      0x9f9 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_line    0x000000000000f24e      0x783 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_line    0x000000000000f9d1      0xe2b build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_line    0x00000000000107fc      0xdf9 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_line    0x00000000000115f5      0x901 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_line    0x0000000000011ef6      0xd19 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_str      0x0000000000000000    0x2739d
+.debug_str      0x0000000000000000    0x273ab
  .debug_str     0x0000000000000000    0x17912 build/obj/src/bsp.o
                                       0x17b6c (size before relaxing)
  .debug_str     0x0000000000017912      0x1bf build/obj/src/digital.o
                                       0x16a61 (size before relaxing)
- .debug_str     0x0000000000017ad1     0x962f build/obj/src/main.o
-                                      0x2092c (size before relaxing)
- .debug_str     0x0000000000021100      0x5b6 build/lib/modules/freertos.a(event_groups.o)
+ .debug_str     0x0000000000017ad1     0x9649 build/obj/src/main.o
+                                      0x20951 (size before relaxing)
+ .debug_str     0x000000000002111a      0x5aa build/lib/modules/freertos.a(event_groups.o)
                                       0x202de (size before relaxing)
- .debug_str     0x00000000000216b6       0xc7 build/lib/modules/freertos.a(list.o)
+ .debug_str     0x00000000000216c4       0xc7 build/lib/modules/freertos.a(list.o)
                                       0x1e4c7 (size before relaxing)
- .debug_str     0x000000000002177d     0x150a build/lib/modules/freertos.a(tasks.o)
+ .debug_str     0x000000000002178b     0x150a build/lib/modules/freertos.a(tasks.o)
                                       0x21ed2 (size before relaxing)
- .debug_str     0x0000000000022c87      0xd1c build/lib/modules/freertos.a(timers.o)
+ .debug_str     0x0000000000022c95      0xd1c build/lib/modules/freertos.a(timers.o)
                                       0x2165d (size before relaxing)
- .debug_str     0x00000000000239a3      0x803 build/lib/modules/freertos.a(port.o)
+ .debug_str     0x00000000000239b1      0x803 build/lib/modules/freertos.a(port.o)
                                       0x20787 (size before relaxing)
- .debug_str     0x00000000000241a6      0x343 build/lib/modules/freertos.a(heap_4.o)
+ .debug_str     0x00000000000241b4      0x343 build/lib/modules/freertos.a(heap_4.o)
                                       0x20361 (size before relaxing)
- .debug_str     0x00000000000244e9      0x82c build/lib/modules/freertos.a(queue.o)
+ .debug_str     0x00000000000244f7      0x82c build/lib/modules/freertos.a(queue.o)
                                       0x211a5 (size before relaxing)
- .debug_str     0x0000000000024d15       0x5e build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_str     0x0000000000024d23       0x5e build/lib/boards/edu-ciaa-nxp.a(board.o)
                                       0x1baff (size before relaxing)
- .debug_str     0x0000000000024d73      0x1f6 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_str     0x0000000000024d81      0x1f6 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
                                        0x2f4b (size before relaxing)
- .debug_str     0x0000000000024f69      0x2ad build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_str     0x0000000000024f77      0x2ad build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
                                       0x1753c (size before relaxing)
- .debug_str     0x0000000000025216      0x662 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_str     0x0000000000025224      0x662 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
                                       0x17ac9 (size before relaxing)
- .debug_str     0x0000000000025878       0x92 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_str     0x0000000000025886       0x92 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
                                       0x1a8e4 (size before relaxing)
- .debug_str     0x000000000002590a      0x815 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_str     0x0000000000025918      0x815 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
                                       0x1bb80 (size before relaxing)
- .debug_str     0x000000000002611f      0x129 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_str     0x000000000002612d      0x129 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
                                       0x1b5e7 (size before relaxing)
- .debug_str     0x0000000000026248      0x240 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_str     0x0000000000026256      0x240 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
                                       0x17069 (size before relaxing)
- .debug_str     0x0000000000026488       0x7e build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_str     0x0000000000026496       0x7e build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
                                       0x1685c (size before relaxing)
- .debug_str     0x0000000000026506      0x5eb build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_str     0x0000000000026514      0x5eb build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
                                       0x17804 (size before relaxing)
- .debug_str     0x0000000000026af1      0x437 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_str     0x0000000000026aff      0x437 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
                                       0x17263 (size before relaxing)
- .debug_str     0x0000000000026f28       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_str     0x0000000000026f36       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
                                       0x1750e (size before relaxing)
- .debug_str     0x0000000000027025      0x378 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_str     0x0000000000027033      0x378 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
                                       0x17684 (size before relaxing)
 
 .comment        0x0000000000000000       0x49
@@ -5140,35 +5150,35 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000550       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
 
-.debug_frame    0x0000000000000000     0x3d64
+.debug_frame    0x0000000000000000     0x3d44
  .debug_frame   0x0000000000000000      0x160 build/obj/src/bsp.o
  .debug_frame   0x0000000000000160      0x294 build/obj/src/digital.o
- .debug_frame   0x00000000000003f4      0x118 build/obj/src/main.o
- .debug_frame   0x000000000000050c      0x218 build/lib/modules/freertos.a(event_groups.o)
- .debug_frame   0x0000000000000724       0xd8 build/lib/modules/freertos.a(list.o)
- .debug_frame   0x00000000000007fc      0x8e0 build/lib/modules/freertos.a(tasks.o)
- .debug_frame   0x00000000000010dc      0x3d4 build/lib/modules/freertos.a(timers.o)
- .debug_frame   0x00000000000014b0      0x1a8 build/lib/modules/freertos.a(port.o)
- .debug_frame   0x0000000000001658      0x12c build/lib/modules/freertos.a(heap_4.o)
- .debug_frame   0x0000000000001784      0x580 build/lib/modules/freertos.a(queue.o)
- .debug_frame   0x0000000000001d04       0x58 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_frame   0x0000000000001d5c      0x1b8 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_frame   0x0000000000001f14       0xa0 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_frame   0x0000000000001fb4      0x568 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_frame   0x000000000000251c       0x54 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_frame   0x0000000000002570      0x4f4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_frame   0x0000000000002a64       0xe0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_frame   0x0000000000002b44      0x264 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_frame   0x0000000000002da8       0x60 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_frame   0x0000000000002e08      0x4c8 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_frame   0x00000000000032d0      0x3e8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_frame   0x00000000000036b8       0xf4 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_frame   0x00000000000037ac      0x4e4 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
- .debug_frame   0x0000000000003c90       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000000000003cbc       0x34 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000003cf0       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000003d1c       0x28 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000003d44       0x20 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000000003f4       0xf8 build/obj/src/main.o
+ .debug_frame   0x00000000000004ec      0x218 build/lib/modules/freertos.a(event_groups.o)
+ .debug_frame   0x0000000000000704       0xd8 build/lib/modules/freertos.a(list.o)
+ .debug_frame   0x00000000000007dc      0x8e0 build/lib/modules/freertos.a(tasks.o)
+ .debug_frame   0x00000000000010bc      0x3d4 build/lib/modules/freertos.a(timers.o)
+ .debug_frame   0x0000000000001490      0x1a8 build/lib/modules/freertos.a(port.o)
+ .debug_frame   0x0000000000001638      0x12c build/lib/modules/freertos.a(heap_4.o)
+ .debug_frame   0x0000000000001764      0x580 build/lib/modules/freertos.a(queue.o)
+ .debug_frame   0x0000000000001ce4       0x58 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_frame   0x0000000000001d3c      0x1b8 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_frame   0x0000000000001ef4       0xa0 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_frame   0x0000000000001f94      0x568 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_frame   0x00000000000024fc       0x54 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_frame   0x0000000000002550      0x4f4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_frame   0x0000000000002a44       0xe0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_frame   0x0000000000002b24      0x264 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_frame   0x0000000000002d88       0x60 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_frame   0x0000000000002de8      0x4c8 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_frame   0x00000000000032b0      0x3e8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_frame   0x0000000000003698       0xf4 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_frame   0x000000000000378c      0x4e4 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_frame   0x0000000000003c70       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000003c9c       0x34 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000003cd0       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000003cfc       0x28 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000003d24       0x20 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
 
 Cross Reference Table
 
@@ -5341,10 +5351,12 @@ DigitalInputHasActivated                          build/obj/src/digital.o
 DigitalInputHasChanged                            build/obj/src/digital.o
 DigitalInputHasDeactivated                        build/obj/src/digital.o
 DigitalOutputActivate                             build/obj/src/digital.o
+                                                  build/obj/src/main.o
 DigitalOutputAllocate                             build/obj/src/digital.o
 DigitalOutputCreate                               build/obj/src/digital.o
                                                   build/obj/src/bsp.o
 DigitalOutputDeactivate                           build/obj/src/digital.o
+                                                  build/obj/src/main.o
 DigitalOutputToggle                               build/obj/src/digital.o
                                                   build/obj/src/main.o
 ExtRateIn                                         build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
@@ -5559,6 +5571,7 @@ xEventGroupSetBits                                build/lib/modules/freertos.a(e
 xEventGroupSetBitsFromISR                         build/lib/modules/freertos.a(event_groups.o)
 xEventGroupSync                                   build/lib/modules/freertos.a(event_groups.o)
 xEventGroupWaitBits                               build/lib/modules/freertos.a(event_groups.o)
+                                                  build/obj/src/main.o
 xPortGetFreeHeapSize                              build/lib/modules/freertos.a(heap_4.o)
 xPortGetMinimumEverFreeHeapSize                   build/lib/modules/freertos.a(heap_4.o)
 xPortStartScheduler                               build/lib/modules/freertos.a(port.o)

@@ -86,23 +86,54 @@ EventGroupHandle_t eventos_teclas;
 /* === Definiciones de funciones internas ================================== */
 
 void Azul(void * parameters) {
+    board_t param = parameters;
+    EventBits_t eventos;
 
+    while (true) {
+        eventos = xEventGroupWaitBits(eventos_teclas, BOTON_PRUEBA_ACTIVADO | BOTON_PRUEBA_LIBERADO, pdTRUE, pdFALSE,
+                                      portMAX_DELAY);
+        if (eventos & BOTON_PRUEBA_ACTIVADO) {
+            DigitalOutputActivate(param->led_azul);
+        } else if (eventos & BOTON_PRUEBA_LIBERADO) {
+            DigitalOutputDeactivate(param->led_azul);
+        }
+    }
 }
 
 void Rojo(void * parameters) {
+    board_t param = parameters;
 
+    while (true) {
+        if (xEventGroupWaitBits(eventos_teclas, BOTON_CAMBIAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+            DigitalOutputToggle(param->led_rojo);
+        }
+    }
 }
 
 void Amarillo(void * parameters) {
+    board_t param = parameters;
 
+    while (true) {
+        if (xEventGroupWaitBits(eventos_teclas, BOTON_PRENDER_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+            DigitalOutputActivate(param->led_amarillo);
+        }
+        if (xEventGroupWaitBits(eventos_teclas, BOTON_APAGAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+            DigitalOutputDeactivate(param->led_amarillo);
+        }
+    }
 }
 
 void Verde(void * parameters) {
+    board_t param = parameters;
 
+    while (true) {
+        DigitalOutputToggle(param->led_verde);
+        vTaskDelay(pdMS_TO_TICKS(5 * 150));
+    }
 }
 
 void Teclado(void * parameters) {
-    
+
 }
 
 void Blinking(void * parameters) {

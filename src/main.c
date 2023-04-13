@@ -59,17 +59,17 @@
 
 /* === Definicion y Macros ================================================= */
 
-#define BOTON_PRUEBA_ACTIVADO (1 << 0)
-#define BOTON_PRUEBA_LIBERADO (1 << 4)
+#define BOT_PRUEBA_ACTIVADO (1 << 0)
+#define BOT_PRUEBA_LIBERADO (1 << 4)
 
-#define BOTON_PRENDER_ACTIVADO (1 << 1)
-#define BOTON_PRENDER_LIBERADO (1 << 5)
+#define BOT_PRENDER_ACTIVADO (1 << 1)
+#define BOT_PRENDER_LIBERADO (1 << 5)
 
-#define BOTON_CAMBIAR_ACTIVADO (1 << 2)
-#define BOTON_CAMBIAR_LIBERADO (1 << 6)
+#define BOT_CAMBIAR_ACTIVADO (1 << 2)
+#define BOT_CAMBIAR_LIBERADO (1 << 6)
 
-#define BOTON_APAGAR_ACTIVADO (1 << 3)
-#define BOTON_APAGAR_LIBERADO (1 << 7)
+#define BOT_APAGAR_ACTIVADO (1 << 3)
+#define BOT_APAGAR_LIBERADO (1 << 7)
 
 /* === Declaraciones de tipos de datos internos ============================ */
 
@@ -90,11 +90,11 @@ void Azul(void * parameters) {
     EventBits_t eventos;
 
     while (true) {
-        eventos = xEventGroupWaitBits(eventos_teclas, BOTON_PRUEBA_ACTIVADO | BOTON_PRUEBA_LIBERADO, pdTRUE, pdFALSE,
+        eventos = xEventGroupWaitBits(eventos_teclas, BOT_PRUEBA_ACTIVADO | BOT_PRUEBA_LIBERADO, pdTRUE, pdFALSE,
                                       portMAX_DELAY);
-        if (eventos & BOTON_PRUEBA_ACTIVADO) {
+        if (eventos & BOT_PRUEBA_ACTIVADO) {
             DigitalOutputActivate(param->led_azul);
-        } else if (eventos & BOTON_PRUEBA_LIBERADO) {
+        } else if (eventos & BOT_PRUEBA_LIBERADO) {
             DigitalOutputDeactivate(param->led_azul);
         }
     }
@@ -104,7 +104,7 @@ void Rojo(void * parameters) {
     board_t param = parameters;
 
     while (true) {
-        if (xEventGroupWaitBits(eventos_teclas, BOTON_CAMBIAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+        if (xEventGroupWaitBits(eventos_teclas, BOT_CAMBIAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
             DigitalOutputToggle(param->led_rojo);
         }
     }
@@ -114,10 +114,10 @@ void Amarillo(void * parameters) {
     board_t param = parameters;
 
     while (true) {
-        if (xEventGroupWaitBits(eventos_teclas, BOTON_PRENDER_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+        if (xEventGroupWaitBits(eventos_teclas, BOT_PRENDER_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
             DigitalOutputActivate(param->led_amarillo);
         }
-        if (xEventGroupWaitBits(eventos_teclas, BOTON_APAGAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
+        if (xEventGroupWaitBits(eventos_teclas, BOT_APAGAR_ACTIVADO, pdTRUE, pdFALSE, portMAX_DELAY)) {
             DigitalOutputDeactivate(param->led_amarillo);
         }
     }
@@ -133,15 +133,41 @@ void Verde(void * parameters) {
 }
 
 void Teclado(void * parameters) {
-
-}
-
-void Blinking(void * parameters) {
     while (true) {
-        DigitalOutputToggle(board->led_azul);
-        vTaskDelay(pdMS_TO_TICKS(500));
+        if (DigitalInputHasActivated(board->boton_cambiar)) {
+            xEventGroupSetBits(eventos_teclas, BOT_CAMBIAR_ACTIVADO);
+        } else if (DigitalInputHasDeactivated(board->boton_cambiar)) {
+            xEventGroupSetBits(eventos_teclas, BOT_CAMBIAR_LIBERADO);
+        }
+
+        if (DigitalInputHasActivated(board->boton_apagar)) {
+            xEventGroupSetBits(eventos_teclas, BOT_APAGAR_ACTIVADO);
+        } else if (DigitalInputHasDeactivated(board->boton_apagar)) {
+            xEventGroupSetBits(eventos_teclas, BOT_APAGAR_LIBERADO);
+        }
+
+        if (DigitalInputHasActivated(board->boton_prender)) {
+            xEventGroupSetBits(eventos_teclas, BOT_PRENDER_ACTIVADO);
+        } else if (DigitalInputHasDeactivated(board->boton_prender)) {
+            xEventGroupSetBits(eventos_teclas, BOT_PRENDER_LIBERADO);
+        }
+
+        if (DigitalInputHasActivated(board->boton_prueba)) {
+            xEventGroupSetBits(eventos_teclas, BOT_PRUEBA_ACTIVADO);
+        } else if (DigitalInputHasDeactivated(board->boton_prueba)) {
+            xEventGroupSetBits(eventos_teclas, BOT_PRUEBA_LIBERADO);
+        }
+
+        vTaskDelay(pdMS_TO_TICKS(150));
     }
 }
+
+//void Blinking(void * parameters) {
+//    while (true) {
+//        DigitalOutputToggle(board->led_azul);
+//        vTaskDelay(pdMS_TO_TICKS(500));
+//    }
+//}
 
 /* === Definiciones de funciones externas ================================== */
 

@@ -1,5 +1,9 @@
 Archive member included to satisfy reference by file (symbol)
 
+build/lib/modules/freertos.a(event_groups.o)
+                              build/obj/src/main.o (xEventGroupCreate)
+build/lib/modules/freertos.a(list.o)
+                              build/lib/modules/freertos.a(event_groups.o) (vListInitialise)
 build/lib/modules/freertos.a(tasks.o)
                               build/obj/src/main.o (xTaskCreate)
 build/lib/modules/freertos.a(timers.o)
@@ -7,9 +11,7 @@ build/lib/modules/freertos.a(timers.o)
 build/lib/modules/freertos.a(port.o)
                               build/lib/modules/freertos.a(tasks.o) (pxPortInitialiseStack)
 build/lib/modules/freertos.a(heap_4.o)
-                              build/lib/modules/freertos.a(tasks.o) (pvPortMalloc)
-build/lib/modules/freertos.a(list.o)
-                              build/lib/modules/freertos.a(tasks.o) (vListInitialise)
+                              build/lib/modules/freertos.a(event_groups.o) (pvPortMalloc)
 build/lib/modules/freertos.a(queue.o)
                               build/lib/modules/freertos.a(timers.o) (xQueueGenericCreate)
 build/lib/boards/edu-ciaa-nxp.a(board.o)
@@ -182,6 +184,8 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 build/obj/src/digital.o
  .text.Chip_GPIO_ReadPortBit
                 0x0000000000000000       0x34 build/obj/src/digital.o
+ .text.Chip_GPIO_SetPinToggle
+                0x0000000000000000       0x32 build/obj/src/digital.o
  .text.DigitalInputGetState
                 0x0000000000000000       0x3c build/obj/src/digital.o
  .text.DigitalInputHasChanged
@@ -193,6 +197,8 @@ Discarded input sections
  .text.DigitalOutputActivate
                 0x0000000000000000       0x24 build/obj/src/digital.o
  .text.DigitalOutputDeactivate
+                0x0000000000000000       0x24 build/obj/src/digital.o
+ .text.DigitalOutputToggle
                 0x0000000000000000       0x24 build/obj/src/digital.o
  .debug_macro   0x0000000000000000      0xa9c build/obj/src/digital.o
  .debug_macro   0x0000000000000000       0x22 build/obj/src/digital.o
@@ -340,9 +346,12 @@ Discarded input sections
  .group         0x0000000000000000        0xc build/obj/src/main.o
  .group         0x0000000000000000        0xc build/obj/src/main.o
  .group         0x0000000000000000        0xc build/obj/src/main.o
+ .group         0x0000000000000000        0xc build/obj/src/main.o
  .text          0x0000000000000000        0x0 build/obj/src/main.o
  .data          0x0000000000000000        0x0 build/obj/src/main.o
  .bss           0x0000000000000000        0x0 build/obj/src/main.o
+ .text.Blinking
+                0x0000000000000000       0x24 build/obj/src/main.o
  .debug_macro   0x0000000000000000      0xa9c build/obj/src/main.o
  .debug_macro   0x0000000000000000       0x22 build/obj/src/main.o
  .debug_macro   0x0000000000000000       0x8e build/obj/src/main.o
@@ -396,6 +405,409 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0xd0 build/obj/src/main.o
  .debug_macro   0x0000000000000000       0x22 build/obj/src/main.o
  .debug_macro   0x0000000000000000       0x40 build/obj/src/main.o
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(event_groups.o)
+ .text          0x0000000000000000        0x0 build/lib/modules/freertos.a(event_groups.o)
+ .data          0x0000000000000000        0x0 build/lib/modules/freertos.a(event_groups.o)
+ .bss           0x0000000000000000        0x0 build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupSync
+                0x0000000000000000      0x15c build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupWaitBits
+                0x0000000000000000      0x19c build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupClearBits
+                0x0000000000000000       0x70 build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupClearBitsFromISR
+                0x0000000000000000       0x28 build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupGetBitsFromISR
+                0x0000000000000000       0x48 build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupSetBits
+                0x0000000000000000      0x116 build/lib/modules/freertos.a(event_groups.o)
+ .text.vEventGroupDelete
+                0x0000000000000000       0x62 build/lib/modules/freertos.a(event_groups.o)
+ .text.vEventGroupSetBitsCallback
+                0x0000000000000000       0x1a build/lib/modules/freertos.a(event_groups.o)
+ .text.vEventGroupClearBitsCallback
+                0x0000000000000000       0x1a build/lib/modules/freertos.a(event_groups.o)
+ .text.prvTestWaitCondition
+                0x0000000000000000       0x44 build/lib/modules/freertos.a(event_groups.o)
+ .text.xEventGroupSetBitsFromISR
+                0x0000000000000000       0x28 build/lib/modules/freertos.a(event_groups.o)
+ .text.uxEventGroupGetNumber
+                0x0000000000000000       0x2c build/lib/modules/freertos.a(event_groups.o)
+ .text.vEventGroupSetNumber
+                0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0xa9c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x43 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x182 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x341 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x103 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x6a build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x1df build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x6c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xd9 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000     0x102d build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x11f build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x2c3 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x112 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x2a build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x2e6 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x82 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x13d build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x198 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x236 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x572 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x18a build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x88 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x1b9 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x1da build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x201 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xe0 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x34c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xdc build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xc4 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x8f build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xb8 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x4c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x328 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x3a build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xd0 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xd5 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x3d build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x16f build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x20 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x109 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x180 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x15a build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xea build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x26 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x4c5 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0xb5 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000      0x120 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000000000       0x91 build/lib/modules/freertos.a(event_groups.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
+ .text          0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
+ .data          0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
+ .bss           0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0xa9c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1e build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x5e build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x10e build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x8d build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x43 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x57 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x182 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x341 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x29 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x103 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x6a build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x1df build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x6c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xd9 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000     0x102d build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x11f build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x2c3 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x112 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x2a build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x2e6 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x82 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x13d build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x198 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x236 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x572 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x18a build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x88 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x1b9 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x1da build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x201 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xe0 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x34c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xdc build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xc4 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x8f build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xb8 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x4c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x328 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x3a build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xd0 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xd5 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x3d build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x16f build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x20 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x109 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x180 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x15a build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xea build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0x26 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000      0x4c5 build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000000000       0xb5 build/lib/modules/freertos.a(list.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(tasks.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(tasks.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(tasks.o)
@@ -501,6 +913,8 @@ Discarded input sections
                 0x0000000000000000      0x128 build/lib/modules/freertos.a(tasks.o)
  .text.xTaskDelayUntil
                 0x0000000000000000       0xfc build/lib/modules/freertos.a(tasks.o)
+ .text.vTaskDelay
+                0x0000000000000000       0x68 build/lib/modules/freertos.a(tasks.o)
  .text.eTaskGetState
                 0x0000000000000000       0xf4 build/lib/modules/freertos.a(tasks.o)
  .text.uxTaskPriorityGet
@@ -576,15 +990,23 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0xa9c build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x1e build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x5e build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000      0x10e build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x8d build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x43 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x57 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000      0x182 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000      0x341 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x29 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000      0x103 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x6a build/lib/modules/freertos.a(tasks.o)
@@ -637,6 +1059,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(tasks.o)
@@ -659,6 +1082,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x4c5 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000       0xb5 build/lib/modules/freertos.a(tasks.o)
  .debug_macro   0x0000000000000000      0x120 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x0000000000000000       0x91 build/lib/modules/freertos.a(tasks.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(timers.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(timers.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(timers.o)
@@ -1276,197 +1700,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x4c5 build/lib/modules/freertos.a(heap_4.o)
  .debug_macro   0x0000000000000000       0xb5 build/lib/modules/freertos.a(heap_4.o)
  .debug_macro   0x0000000000000000      0x120 build/lib/modules/freertos.a(heap_4.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .group         0x0000000000000000        0xc build/lib/modules/freertos.a(list.o)
- .text          0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
- .data          0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
- .bss           0x0000000000000000        0x0 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0xa9c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1e build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x5e build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x10e build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x8d build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x43 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x57 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x182 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x341 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x29 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x103 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x6a build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x1df build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x6c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xd9 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000     0x102d build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x11f build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x2c3 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x112 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x2a build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x2e6 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x82 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x13d build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x198 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x34 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x58 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x236 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x572 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x18a build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x88 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x1b9 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x1da build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x2e build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x201 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xe0 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x34c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xdc build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xc4 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x8f build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x94 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xb8 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x4c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x328 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x3a build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xd0 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x11 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x40 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x35 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x22 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x10 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x52 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xd5 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x3d build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x16 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x16f build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x20 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x109 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x180 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x15a build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xea build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x1c build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0x26 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000      0x4c5 build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000000000       0xb5 build/lib/modules/freertos.a(list.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(queue.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(queue.o)
  .group         0x0000000000000000        0xc build/lib/modules/freertos.a(queue.o)
@@ -3722,25 +3955,25 @@ END GROUP
                 0x000000001a000040                . = ALIGN (0x4)
                 0x000000001a000040                __section_table_start = .
                 0x000000001a000040                __data_section_table = .
-                0x000000001a000040        0x4 LONG 0x1a00ecf4 LOADADDR (.data)
+                0x000000001a000040        0x4 LONG 0x1a00ed50 LOADADDR (.data)
                 0x000000001a000044        0x4 LONG 0x10000000 ADDR (.data)
                 0x000000001a000048        0x4 LONG 0x40 SIZEOF (.data)
-                0x000000001a00004c        0x4 LONG 0x1a004cf4 LOADADDR (.data_RAM2)
+                0x000000001a00004c        0x4 LONG 0x1a004d50 LOADADDR (.data_RAM2)
                 0x000000001a000050        0x4 LONG 0x10080000 ADDR (.data_RAM2)
                 0x000000001a000054        0x4 LONG 0xa000 SIZEOF (.data_RAM2)
-                0x000000001a000058        0x4 LONG 0x1a00ecf4 LOADADDR (.data_RAM3)
+                0x000000001a000058        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM3)
                 0x000000001a00005c        0x4 LONG 0x20000000 ADDR (.data_RAM3)
                 0x000000001a000060        0x4 LONG 0x0 SIZEOF (.data_RAM3)
-                0x000000001a000064        0x4 LONG 0x1a00ecf4 LOADADDR (.data_RAM4)
+                0x000000001a000064        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM4)
                 0x000000001a000068        0x4 LONG 0x20008000 ADDR (.data_RAM4)
                 0x000000001a00006c        0x4 LONG 0x0 SIZEOF (.data_RAM4)
-                0x000000001a000070        0x4 LONG 0x1a00ecf4 LOADADDR (.data_RAM5)
+                0x000000001a000070        0x4 LONG 0x1a00ed50 LOADADDR (.data_RAM5)
                 0x000000001a000074        0x4 LONG 0x2000c000 ADDR (.data_RAM5)
                 0x000000001a000078        0x4 LONG 0x0 SIZEOF (.data_RAM5)
                 0x000000001a00007c                __data_section_table_end = .
                 0x000000001a00007c                __bss_section_table = .
                 0x000000001a00007c        0x4 LONG 0x10000040 ADDR (.bss)
-                0x000000001a000080        0x4 LONG 0x220 SIZEOF (.bss)
+                0x000000001a000080        0x4 LONG 0x224 SIZEOF (.bss)
                 0x000000001a000084        0x4 LONG 0x1008a000 ADDR (.bss_RAM2)
                 0x000000001a000088        0x4 LONG 0x0 SIZEOF (.bss_RAM2)
                 0x000000001a00008c        0x4 LONG 0x20000000 ADDR (.bss_RAM3)
@@ -3791,7 +4024,7 @@ END GROUP
                 0x000000001a00015a                PROVIDE (__init_array_end = .)
                 0x000000001a00015c                . = ALIGN (0x4)
 
-.text           0x000000001a000160     0x4b8c
+.text           0x000000001a000160     0x4be8
  *(.text*)
  .text.Chip_SCU_PinMuxSet
                 0x000000001a000160       0x34 build/obj/src/bsp.o
@@ -3814,472 +4047,472 @@ END GROUP
                 0x000000001a000422       0x40 build/obj/src/digital.o
  .text.Chip_GPIO_SetPinDIR
                 0x000000001a000462       0x42 build/obj/src/digital.o
- .text.Chip_GPIO_SetPinToggle
-                0x000000001a0004a4       0x32 build/obj/src/digital.o
- *fill*         0x000000001a0004d6        0x2 
  .text.DigitalInputAllocate
-                0x000000001a0004d8       0x6c build/obj/src/digital.o
-                0x000000001a0004d8                DigitalInputAllocate
+                0x000000001a0004a4       0x6c build/obj/src/digital.o
+                0x000000001a0004a4                DigitalInputAllocate
  .text.DigitalOutputAllocate
-                0x000000001a000544       0x6c build/obj/src/digital.o
-                0x000000001a000544                DigitalOutputAllocate
+                0x000000001a000510       0x6c build/obj/src/digital.o
+                0x000000001a000510                DigitalOutputAllocate
  .text.DigitalInputCreate
-                0x000000001a0005b0       0x50 build/obj/src/digital.o
-                0x000000001a0005b0                DigitalInputCreate
+                0x000000001a00057c       0x50 build/obj/src/digital.o
+                0x000000001a00057c                DigitalInputCreate
  .text.DigitalOutputCreate
-                0x000000001a000600       0x58 build/obj/src/digital.o
-                0x000000001a000600                DigitalOutputCreate
- .text.DigitalOutputToggle
-                0x000000001a000658       0x24 build/obj/src/digital.o
-                0x000000001a000658                DigitalOutputToggle
- .text.Blinking
-                0x000000001a00067c       0x24 build/obj/src/main.o
-                0x000000001a00067c                Blinking
- .text.main     0x000000001a0006a0       0x38 build/obj/src/main.o
-                0x000000001a0006a0                main
- .text.xTaskCreate
-                0x000000001a0006d8       0x82 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a0006d8                xTaskCreate
- .text.prvInitialiseNewTask
-                0x000000001a00075a      0x12c build/lib/modules/freertos.a(tasks.o)
- *fill*         0x000000001a000886        0x2 
- .text.prvAddNewTaskToReadyList
-                0x000000001a000888       0xdc build/lib/modules/freertos.a(tasks.o)
- .text.vTaskDelay
-                0x000000001a000964       0x68 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000964                vTaskDelay
- .text.vTaskStartScheduler
-                0x000000001a0009cc       0xa4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a0009cc                vTaskStartScheduler
- .text.vTaskSuspendAll
-                0x000000001a000a70       0x1c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000a70                vTaskSuspendAll
- .text.xTaskResumeAll
-                0x000000001a000a8c      0x138 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000a8c                xTaskResumeAll
- .text.xTaskGetTickCount
-                0x000000001a000bc4       0x20 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000bc4                xTaskGetTickCount
- .text.xTaskIncrementTick
-                0x000000001a000be4      0x170 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000be4                xTaskIncrementTick
- .text.vTaskSwitchContext
-                0x000000001a000d54       0xb8 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000d54                vTaskSwitchContext
- .text.vTaskPlaceOnEventList
-                0x000000001a000e0c       0x48 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000e0c                vTaskPlaceOnEventList
- .text.vTaskPlaceOnEventListRestricted
-                0x000000001a000e54       0x58 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000e54                vTaskPlaceOnEventListRestricted
- .text.xTaskRemoveFromEventList
-                0x000000001a000eac       0xc4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000eac                xTaskRemoveFromEventList
- .text.vTaskInternalSetTimeOutState
-                0x000000001a000f70       0x2c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000f70                vTaskInternalSetTimeOutState
- .text.xTaskCheckForTimeOut
-                0x000000001a000f9c       0xcc build/lib/modules/freertos.a(tasks.o)
-                0x000000001a000f9c                xTaskCheckForTimeOut
- .text.vTaskMissedYield
-                0x000000001a001068       0x18 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001068                vTaskMissedYield
- .text.prvIdleTask
-                0x000000001a001080       0x30 build/lib/modules/freertos.a(tasks.o)
- .text.prvInitialiseTaskLists
-                0x000000001a0010b0       0x80 build/lib/modules/freertos.a(tasks.o)
- .text.prvCheckTasksWaitingTermination
-                0x000000001a001130       0x5c build/lib/modules/freertos.a(tasks.o)
- .text.prvDeleteTCB
-                0x000000001a00118c       0x20 build/lib/modules/freertos.a(tasks.o)
- .text.prvResetNextTaskUnblockTime
-                0x000000001a0011ac       0x38 build/lib/modules/freertos.a(tasks.o)
- .text.xTaskGetSchedulerState
-                0x000000001a0011e4       0x3c build/lib/modules/freertos.a(tasks.o)
-                0x000000001a0011e4                xTaskGetSchedulerState
- .text.xTaskPriorityDisinherit
-                0x000000001a001220       0xf4 build/lib/modules/freertos.a(tasks.o)
-                0x000000001a001220                xTaskPriorityDisinherit
- .text.prvAddCurrentTaskToDelayedList
-                0x000000001a001314       0xcc build/lib/modules/freertos.a(tasks.o)
- .text.xTimerCreateTimerTask
-                0x000000001a0013e0       0x64 build/lib/modules/freertos.a(timers.o)
-                0x000000001a0013e0                xTimerCreateTimerTask
- .text.xTimerGenericCommand
-                0x000000001a001444       0x9c build/lib/modules/freertos.a(timers.o)
-                0x000000001a001444                xTimerGenericCommand
- .text.prvProcessExpiredTimer
-                0x000000001a0014e0       0x98 build/lib/modules/freertos.a(timers.o)
- .text.prvTimerTask
-                0x000000001a001578       0x24 build/lib/modules/freertos.a(timers.o)
- .text.prvProcessTimerOrBlockTask
-                0x000000001a00159c       0x9c build/lib/modules/freertos.a(timers.o)
- .text.prvGetNextExpireTime
-                0x000000001a001638       0x48 build/lib/modules/freertos.a(timers.o)
- .text.prvSampleTimeNow
-                0x000000001a001680       0x40 build/lib/modules/freertos.a(timers.o)
- .text.prvInsertTimerInActiveList
-                0x000000001a0016c0       0x84 build/lib/modules/freertos.a(timers.o)
- .text.prvProcessReceivedCommands
-                0x000000001a001744      0x1c4 build/lib/modules/freertos.a(timers.o)
- .text.prvSwitchTimerLists
-                0x000000001a001908       0xc8 build/lib/modules/freertos.a(timers.o)
- .text.prvCheckForValidListAndQueue
-                0x000000001a0019d0       0x6c build/lib/modules/freertos.a(timers.o)
- .text.pxPortInitialiseStack
-                0x000000001a001a3c       0x68 build/lib/modules/freertos.a(port.o)
-                0x000000001a001a3c                pxPortInitialiseStack
- .text.prvTaskExitError
-                0x000000001a001aa4       0x58 build/lib/modules/freertos.a(port.o)
- *fill*         0x000000001a001afc        0x4 
- .text.SVC_Handler
-                0x000000001a001b00       0x28 build/lib/modules/freertos.a(port.o)
-                0x000000001a001b00                SVC_Handler
- .text.prvPortStartFirstTask
-                0x000000001a001b28       0x2c build/lib/modules/freertos.a(port.o)
- .text.xPortStartScheduler
-                0x000000001a001b54      0x164 build/lib/modules/freertos.a(port.o)
-                0x000000001a001b54                xPortStartScheduler
- .text.vPortEnterCritical
-                0x000000001a001cb8       0x60 build/lib/modules/freertos.a(port.o)
-                0x000000001a001cb8                vPortEnterCritical
- .text.vPortExitCritical
-                0x000000001a001d18       0x54 build/lib/modules/freertos.a(port.o)
-                0x000000001a001d18                vPortExitCritical
- *fill*         0x000000001a001d6c        0x4 
- .text.PendSV_Handler
-                0x000000001a001d70       0x68 build/lib/modules/freertos.a(port.o)
-                0x000000001a001d70                PendSV_Handler
- .text.SysTick_Handler
-                0x000000001a001dd8       0x44 build/lib/modules/freertos.a(port.o)
-                0x000000001a001dd8                SysTick_Handler
- .text.vPortSetupTimerInterrupt
-                0x000000001a001e1c       0x48 build/lib/modules/freertos.a(port.o)
-                0x000000001a001e1c                vPortSetupTimerInterrupt
- .text.vPortEnableVFP
-                0x000000001a001e64       0x18 build/lib/modules/freertos.a(port.o)
- .text.vPortValidateInterruptPriority
-                0x000000001a001e7c       0x80 build/lib/modules/freertos.a(port.o)
-                0x000000001a001e7c                vPortValidateInterruptPriority
- .text.pvPortMalloc
-                0x000000001a001efc      0x1c0 build/lib/modules/freertos.a(heap_4.o)
-                0x000000001a001efc                pvPortMalloc
- .text.vPortFree
-                0x000000001a0020bc       0xc4 build/lib/modules/freertos.a(heap_4.o)
-                0x000000001a0020bc                vPortFree
- .text.prvHeapInit
-                0x000000001a002180       0xc4 build/lib/modules/freertos.a(heap_4.o)
- .text.prvInsertBlockIntoFreeList
-                0x000000001a002244       0xb4 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a0005cc       0x58 build/obj/src/digital.o
+                0x000000001a0005cc                DigitalOutputCreate
+ .text.Azul     0x000000001a000624       0x14 build/obj/src/main.o
+                0x000000001a000624                Azul
+ .text.Rojo     0x000000001a000638       0x14 build/obj/src/main.o
+                0x000000001a000638                Rojo
+ .text.Amarillo
+                0x000000001a00064c       0x14 build/obj/src/main.o
+                0x000000001a00064c                Amarillo
+ .text.Verde    0x000000001a000660       0x14 build/obj/src/main.o
+                0x000000001a000660                Verde
+ .text.Teclado  0x000000001a000674       0x14 build/obj/src/main.o
+                0x000000001a000674                Teclado
+ .text.main     0x000000001a000688       0xc0 build/obj/src/main.o
+                0x000000001a000688                main
+ .text.xEventGroupCreate
+                0x000000001a000748       0x2e build/lib/modules/freertos.a(event_groups.o)
+                0x000000001a000748                xEventGroupCreate
  .text.vListInitialise
-                0x000000001a0022f8       0x40 build/lib/modules/freertos.a(list.o)
-                0x000000001a0022f8                vListInitialise
+                0x000000001a000776       0x40 build/lib/modules/freertos.a(list.o)
+                0x000000001a000776                vListInitialise
  .text.vListInitialiseItem
-                0x000000001a002338       0x1a build/lib/modules/freertos.a(list.o)
-                0x000000001a002338                vListInitialiseItem
+                0x000000001a0007b6       0x1a build/lib/modules/freertos.a(list.o)
+                0x000000001a0007b6                vListInitialiseItem
  .text.vListInsertEnd
-                0x000000001a002352       0x48 build/lib/modules/freertos.a(list.o)
-                0x000000001a002352                vListInsertEnd
+                0x000000001a0007d0       0x48 build/lib/modules/freertos.a(list.o)
+                0x000000001a0007d0                vListInsertEnd
  .text.vListInsert
-                0x000000001a00239a       0x72 build/lib/modules/freertos.a(list.o)
-                0x000000001a00239a                vListInsert
+                0x000000001a000818       0x72 build/lib/modules/freertos.a(list.o)
+                0x000000001a000818                vListInsert
  .text.uxListRemove
-                0x000000001a00240c       0x54 build/lib/modules/freertos.a(list.o)
-                0x000000001a00240c                uxListRemove
+                0x000000001a00088a       0x54 build/lib/modules/freertos.a(list.o)
+                0x000000001a00088a                uxListRemove
+ .text.xTaskCreate
+                0x000000001a0008de       0x82 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0008de                xTaskCreate
+ .text.prvInitialiseNewTask
+                0x000000001a000960      0x12c build/lib/modules/freertos.a(tasks.o)
+ .text.prvAddNewTaskToReadyList
+                0x000000001a000a8c       0xdc build/lib/modules/freertos.a(tasks.o)
+ .text.vTaskStartScheduler
+                0x000000001a000b68       0xa4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000b68                vTaskStartScheduler
+ .text.vTaskSuspendAll
+                0x000000001a000c0c       0x1c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000c0c                vTaskSuspendAll
+ .text.xTaskResumeAll
+                0x000000001a000c28      0x138 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000c28                xTaskResumeAll
+ .text.xTaskGetTickCount
+                0x000000001a000d60       0x20 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000d60                xTaskGetTickCount
+ .text.xTaskIncrementTick
+                0x000000001a000d80      0x170 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000d80                xTaskIncrementTick
+ .text.vTaskSwitchContext
+                0x000000001a000ef0       0xb8 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000ef0                vTaskSwitchContext
+ .text.vTaskPlaceOnEventList
+                0x000000001a000fa8       0x48 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000fa8                vTaskPlaceOnEventList
+ .text.vTaskPlaceOnEventListRestricted
+                0x000000001a000ff0       0x58 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a000ff0                vTaskPlaceOnEventListRestricted
+ .text.xTaskRemoveFromEventList
+                0x000000001a001048       0xc4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001048                xTaskRemoveFromEventList
+ .text.vTaskInternalSetTimeOutState
+                0x000000001a00110c       0x2c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a00110c                vTaskInternalSetTimeOutState
+ .text.xTaskCheckForTimeOut
+                0x000000001a001138       0xcc build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001138                xTaskCheckForTimeOut
+ .text.vTaskMissedYield
+                0x000000001a001204       0x18 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001204                vTaskMissedYield
+ .text.prvIdleTask
+                0x000000001a00121c       0x30 build/lib/modules/freertos.a(tasks.o)
+ .text.prvInitialiseTaskLists
+                0x000000001a00124c       0x80 build/lib/modules/freertos.a(tasks.o)
+ .text.prvCheckTasksWaitingTermination
+                0x000000001a0012cc       0x5c build/lib/modules/freertos.a(tasks.o)
+ .text.prvDeleteTCB
+                0x000000001a001328       0x20 build/lib/modules/freertos.a(tasks.o)
+ .text.prvResetNextTaskUnblockTime
+                0x000000001a001348       0x38 build/lib/modules/freertos.a(tasks.o)
+ .text.xTaskGetSchedulerState
+                0x000000001a001380       0x3c build/lib/modules/freertos.a(tasks.o)
+                0x000000001a001380                xTaskGetSchedulerState
+ .text.xTaskPriorityDisinherit
+                0x000000001a0013bc       0xf4 build/lib/modules/freertos.a(tasks.o)
+                0x000000001a0013bc                xTaskPriorityDisinherit
+ .text.prvAddCurrentTaskToDelayedList
+                0x000000001a0014b0       0xcc build/lib/modules/freertos.a(tasks.o)
+ .text.xTimerCreateTimerTask
+                0x000000001a00157c       0x64 build/lib/modules/freertos.a(timers.o)
+                0x000000001a00157c                xTimerCreateTimerTask
+ .text.xTimerGenericCommand
+                0x000000001a0015e0       0x9c build/lib/modules/freertos.a(timers.o)
+                0x000000001a0015e0                xTimerGenericCommand
+ .text.prvProcessExpiredTimer
+                0x000000001a00167c       0x98 build/lib/modules/freertos.a(timers.o)
+ .text.prvTimerTask
+                0x000000001a001714       0x24 build/lib/modules/freertos.a(timers.o)
+ .text.prvProcessTimerOrBlockTask
+                0x000000001a001738       0x9c build/lib/modules/freertos.a(timers.o)
+ .text.prvGetNextExpireTime
+                0x000000001a0017d4       0x48 build/lib/modules/freertos.a(timers.o)
+ .text.prvSampleTimeNow
+                0x000000001a00181c       0x40 build/lib/modules/freertos.a(timers.o)
+ .text.prvInsertTimerInActiveList
+                0x000000001a00185c       0x84 build/lib/modules/freertos.a(timers.o)
+ .text.prvProcessReceivedCommands
+                0x000000001a0018e0      0x1c4 build/lib/modules/freertos.a(timers.o)
+ .text.prvSwitchTimerLists
+                0x000000001a001aa4       0xc8 build/lib/modules/freertos.a(timers.o)
+ .text.prvCheckForValidListAndQueue
+                0x000000001a001b6c       0x6c build/lib/modules/freertos.a(timers.o)
+ .text.pxPortInitialiseStack
+                0x000000001a001bd8       0x68 build/lib/modules/freertos.a(port.o)
+                0x000000001a001bd8                pxPortInitialiseStack
+ .text.prvTaskExitError
+                0x000000001a001c40       0x58 build/lib/modules/freertos.a(port.o)
+ *fill*         0x000000001a001c98        0x8 
+ .text.SVC_Handler
+                0x000000001a001ca0       0x28 build/lib/modules/freertos.a(port.o)
+                0x000000001a001ca0                SVC_Handler
+ .text.prvPortStartFirstTask
+                0x000000001a001cc8       0x2c build/lib/modules/freertos.a(port.o)
+ .text.xPortStartScheduler
+                0x000000001a001cf4      0x164 build/lib/modules/freertos.a(port.o)
+                0x000000001a001cf4                xPortStartScheduler
+ .text.vPortEnterCritical
+                0x000000001a001e58       0x60 build/lib/modules/freertos.a(port.o)
+                0x000000001a001e58                vPortEnterCritical
+ .text.vPortExitCritical
+                0x000000001a001eb8       0x54 build/lib/modules/freertos.a(port.o)
+                0x000000001a001eb8                vPortExitCritical
+ *fill*         0x000000001a001f0c        0x4 
+ .text.PendSV_Handler
+                0x000000001a001f10       0x68 build/lib/modules/freertos.a(port.o)
+                0x000000001a001f10                PendSV_Handler
+ .text.SysTick_Handler
+                0x000000001a001f78       0x44 build/lib/modules/freertos.a(port.o)
+                0x000000001a001f78                SysTick_Handler
+ .text.vPortSetupTimerInterrupt
+                0x000000001a001fbc       0x48 build/lib/modules/freertos.a(port.o)
+                0x000000001a001fbc                vPortSetupTimerInterrupt
+ .text.vPortEnableVFP
+                0x000000001a002004       0x18 build/lib/modules/freertos.a(port.o)
+ .text.vPortValidateInterruptPriority
+                0x000000001a00201c       0x80 build/lib/modules/freertos.a(port.o)
+                0x000000001a00201c                vPortValidateInterruptPriority
+ .text.pvPortMalloc
+                0x000000001a00209c      0x1c0 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a00209c                pvPortMalloc
+ .text.vPortFree
+                0x000000001a00225c       0xc4 build/lib/modules/freertos.a(heap_4.o)
+                0x000000001a00225c                vPortFree
+ .text.prvHeapInit
+                0x000000001a002320       0xc4 build/lib/modules/freertos.a(heap_4.o)
+ .text.prvInsertBlockIntoFreeList
+                0x000000001a0023e4       0xb4 build/lib/modules/freertos.a(heap_4.o)
  .text.xQueueGenericReset
-                0x000000001a002460       0xd0 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002460                xQueueGenericReset
+                0x000000001a002498       0xd0 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002498                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x000000001a002530       0xbe build/lib/modules/freertos.a(queue.o)
-                0x000000001a002530                xQueueGenericCreate
+                0x000000001a002568       0xbe build/lib/modules/freertos.a(queue.o)
+                0x000000001a002568                xQueueGenericCreate
  .text.prvInitialiseNewQueue
-                0x000000001a0025ee       0x46 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002626       0x46 build/lib/modules/freertos.a(queue.o)
  .text.xQueueGenericSend
-                0x000000001a002634      0x1fc build/lib/modules/freertos.a(queue.o)
-                0x000000001a002634                xQueueGenericSend
+                0x000000001a00266c      0x1fc build/lib/modules/freertos.a(queue.o)
+                0x000000001a00266c                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x000000001a002830      0x154 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002830                xQueueGenericSendFromISR
+                0x000000001a002868      0x154 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002868                xQueueGenericSendFromISR
  .text.xQueueReceive
-                0x000000001a002984      0x1c0 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002984                xQueueReceive
+                0x000000001a0029bc      0x1c0 build/lib/modules/freertos.a(queue.o)
+                0x000000001a0029bc                xQueueReceive
  .text.prvCopyDataToQueue
-                0x000000001a002b44       0xd4 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002b7c       0xd4 build/lib/modules/freertos.a(queue.o)
  .text.prvCopyDataFromQueue
-                0x000000001a002c18       0x4c build/lib/modules/freertos.a(queue.o)
+                0x000000001a002c50       0x4c build/lib/modules/freertos.a(queue.o)
  .text.prvUnlockQueue
-                0x000000001a002c64       0xa4 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002c9c       0xa4 build/lib/modules/freertos.a(queue.o)
  .text.prvIsQueueEmpty
-                0x000000001a002d08       0x2c build/lib/modules/freertos.a(queue.o)
+                0x000000001a002d40       0x2c build/lib/modules/freertos.a(queue.o)
  .text.prvIsQueueFull
-                0x000000001a002d34       0x30 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002d6c       0x30 build/lib/modules/freertos.a(queue.o)
  .text.vQueueAddToRegistry
-                0x000000001a002d64       0x54 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002d64                vQueueAddToRegistry
+                0x000000001a002d9c       0x54 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002d9c                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x000000001a002db8       0x68 build/lib/modules/freertos.a(queue.o)
-                0x000000001a002db8                vQueueWaitForMessageRestricted
+                0x000000001a002df0       0x68 build/lib/modules/freertos.a(queue.o)
+                0x000000001a002df0                vQueueWaitForMessageRestricted
  .text.initialise_monitor_handles
-                0x000000001a002e20        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e20                initialise_monitor_handles
- .text._fini    0x000000001a002e2e        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e2e                _fini
- .text._init    0x000000001a002e3c        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e3c                _init
- *fill*         0x000000001a002e4a        0x2 
+                0x000000001a002e58        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a002e58                initialise_monitor_handles
+ .text._fini    0x000000001a002e66        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a002e66                _fini
+ .text._init    0x000000001a002e74        0xe build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a002e74                _init
+ *fill*         0x000000001a002e82        0x2 
  .text.Reset_Handler
-                0x000000001a002e4c       0xcc build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
-                0x000000001a002e4c                Reset_Handler
+                0x000000001a002e84       0xcc build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x000000001a002e84                Reset_Handler
  .text.SystemCoreClockUpdate
-                0x000000001a002f18       0x18 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
-                0x000000001a002f18                SystemCoreClockUpdate
- .text.ABS      0x000000001a002f30       0x22 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- *fill*         0x000000001a002f52        0x2 
+                0x000000001a002f50       0x18 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+                0x000000001a002f50                SystemCoreClockUpdate
+ .text.ABS      0x000000001a002f68       0x22 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ *fill*         0x000000001a002f8a        0x2 
  .text.pll_calc_divs
-                0x000000001a002f54      0x124 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a002f8c      0x124 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.pll_get_frac
-                0x000000001a003078      0x180 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0030b0      0x180 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_GetDivRate
-                0x000000001a0031f8       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003230       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_FindBaseClock
-                0x000000001a003238       0x90 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003270       0x90 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .text.Chip_Clock_EnableCrystal
-                0x000000001a0032c8       0x70 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0032c8                Chip_Clock_EnableCrystal
+                0x000000001a003300       0x70 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003300                Chip_Clock_EnableCrystal
  .text.Chip_Clock_CalcMainPLLValue
-                0x000000001a003338       0xd8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003338                Chip_Clock_CalcMainPLLValue
+                0x000000001a003370       0xd8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003370                Chip_Clock_CalcMainPLLValue
  .text.Chip_Clock_GetMainPLLHz
-                0x000000001a003410       0xbc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003410                Chip_Clock_GetMainPLLHz
+                0x000000001a003448       0xbc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003448                Chip_Clock_GetMainPLLHz
  .text.Chip_Clock_GetDividerSource
-                0x000000001a0034cc       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0034cc                Chip_Clock_GetDividerSource
+                0x000000001a003504       0x40 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003504                Chip_Clock_GetDividerSource
  .text.Chip_Clock_GetDividerDivisor
-                0x000000001a00350c       0x38 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a00350c                Chip_Clock_GetDividerDivisor
+                0x000000001a003544       0x38 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003544                Chip_Clock_GetDividerDivisor
  .text.Chip_Clock_GetClockInputHz
-                0x000000001a003544      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003544                Chip_Clock_GetClockInputHz
+                0x000000001a00357c      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a00357c                Chip_Clock_GetClockInputHz
  .text.Chip_Clock_GetBaseClocktHz
-                0x000000001a003684       0x24 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003684                Chip_Clock_GetBaseClocktHz
+                0x000000001a0036bc       0x24 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0036bc                Chip_Clock_GetBaseClocktHz
  .text.Chip_Clock_SetBaseClock
-                0x000000001a0036a8       0x9c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a0036a8                Chip_Clock_SetBaseClock
+                0x000000001a0036e0       0x9c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0036e0                Chip_Clock_SetBaseClock
  .text.Chip_Clock_GetBaseClock
-                0x000000001a003744       0x4c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003744                Chip_Clock_GetBaseClock
+                0x000000001a00377c       0x4c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a00377c                Chip_Clock_GetBaseClock
  .text.Chip_Clock_EnableOpts
-                0x000000001a003790       0x7c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a003790                Chip_Clock_EnableOpts
+                0x000000001a0037c8       0x7c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0037c8                Chip_Clock_EnableOpts
  .text.Chip_Clock_Enable
-                0x000000001a00380c       0x60 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a00380c                Chip_Clock_Enable
+                0x000000001a003844       0x60 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a003844                Chip_Clock_Enable
  .text.Chip_Clock_GetRate
-                0x000000001a00386c       0x88 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
-                0x000000001a00386c                Chip_Clock_GetRate
+                0x000000001a0038a4       0x88 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001a0038a4                Chip_Clock_GetRate
  .text.SCB_GetFPUType
-                0x000000001a0038f4       0x2c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x000000001a00392c       0x2c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
  .text.SystemInit
-                0x000000001a003920       0x38 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
-                0x000000001a003920                SystemInit
+                0x000000001a003958       0x38 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x000000001a003958                SystemInit
  .text.Chip_SCU_I2C0PinConfig
-                0x000000001a003958       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003990       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinState
-                0x000000001a003978       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a0039b0       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinDIROutput
-                0x000000001a0039b0       0x3e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a0039e8       0x3e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_GPIO_SetPinDIRInput
-                0x000000001a0039ee       0x40 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003a26       0x40 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_Enable
-                0x000000001a003a2e       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003a66       0x20 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_SetFormat
-                0x000000001a003a4e       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003a86       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_SSP_Set_Mode
-                0x000000001a003a80       0x26 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003ab8       0x26 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_UART_TXEnable
-                0x000000001a003aa6       0x1a build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003ade       0x1a build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Chip_UART_ConfigData
-                0x000000001a003ac0       0x1c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003af8       0x1c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_LED_Init
-                0x000000001a003adc       0x54 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003b14       0x54 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_TEC_Init
-                0x000000001a003b30       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003b68       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_GPIO_Init
-                0x000000001a003b74       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003bac       0x44 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_I2C_Init
-                0x000000001a003bb8       0x24 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003bf0       0x24 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_SPI_Init
-                0x000000001a003bdc       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .text.Board_ADC_Init
                 0x000000001a003c14       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .text.Board_ADC_Init
+                0x000000001a003c4c       0x38 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .text.Board_Debug_Init
-                0x000000001a003c4c       0x2c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a003c4c                Board_Debug_Init
+                0x000000001a003c84       0x2c build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003c84                Board_Debug_Init
  .text.Board_Init
-                0x000000001a003c78       0x30 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a003c78                Board_Init
+                0x000000001a003cb0       0x30 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a003cb0                Board_Init
  .text.Chip_SCU_PinMuxSet
-                0x000000001a003ca8       0x34 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003ce0       0x34 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Chip_SCU_SetPinMuxing
-                0x000000001a003cdc       0x4c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003d14       0x4c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Chip_CREG_SetFlashAcceleration
-                0x000000001a003d28       0x54 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003d60       0x54 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .text.Board_SetupMuxing
-                0x000000001a003d7c       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003d7c                Board_SetupMuxing
+                0x000000001a003db4       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003db4                Board_SetupMuxing
  .text.Board_SetupClocking
-                0x000000001a003d90       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003d90                Board_SetupClocking
+                0x000000001a003dc8       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003dc8                Board_SetupClocking
  .text.Board_SystemInit
-                0x000000001a003e04       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
-                0x000000001a003e04                Board_SystemInit
+                0x000000001a003e3c       0x14 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a003e3c                Board_SystemInit
  .text.getFullConvClk
-                0x000000001a003e18       0x10 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a003e50       0x10 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .text.Chip_ADC_GetClockIndex
-                0x000000001a003e28       0x2c build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a003e60       0x2c build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .text.getClkDiv
-                0x000000001a003e54       0x66 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- *fill*         0x000000001a003eba        0x2 
+                0x000000001a003e8c       0x66 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ *fill*         0x000000001a003ef2        0x2 
  .text.Chip_ADC_Init
-                0x000000001a003ebc       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003ebc                Chip_ADC_Init
+                0x000000001a003ef4       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a003ef4                Chip_ADC_Init
  .text.Chip_ADC_SetSampleRate
-                0x000000001a003f44       0x64 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003f44                Chip_ADC_SetSampleRate
+                0x000000001a003f7c       0x64 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a003f7c                Chip_ADC_SetSampleRate
  .text.Chip_ADC_SetResolution
-                0x000000001a003fa8       0x2a build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
-                0x000000001a003fa8                Chip_ADC_SetResolution
+                0x000000001a003fe0       0x2a build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x000000001a003fe0                Chip_ADC_SetResolution
  .text.Chip_GPIO_Init
-                0x000000001a003fd2       0x14 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
-                0x000000001a003fd2                Chip_GPIO_Init
- *fill*         0x000000001a003fe6        0x2 
+                0x000000001a00400a       0x14 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+                0x000000001a00400a                Chip_GPIO_Init
+ *fill*         0x000000001a00401e        0x2 
  .text.enableClk
-                0x000000001a003fe8       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004020       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .text.getClkRate
-                0x000000001a004018       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004050       0x30 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .text.Chip_I2C_EventHandler
-                0x000000001a004048       0x4c build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a004048                Chip_I2C_EventHandler
+                0x000000001a004080       0x4c build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004080                Chip_I2C_EventHandler
  .text.Chip_I2C_Init
-                0x000000001a004094       0x34 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a004094                Chip_I2C_Init
+                0x000000001a0040cc       0x34 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a0040cc                Chip_I2C_Init
  .text.Chip_I2C_SetClockRate
-                0x000000001a0040c8       0x68 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
-                0x000000001a0040c8                Chip_I2C_SetClockRate
+                0x000000001a004100       0x68 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x000000001a004100                Chip_I2C_SetClockRate
  .text.Chip_SSP_SetFormat
-                0x000000001a004130       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a004168       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_Set_Mode
-                0x000000001a004162       0x26 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a00419a       0x26 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_GetClockIndex
-                0x000000001a004188       0x2c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0041c0       0x2c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_GetPeriphClockIndex
-                0x000000001a0041b4       0x30 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0041ec       0x30 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .text.Chip_SSP_SetClockRate
-                0x000000001a0041e4       0x36 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a0041e4                Chip_SSP_SetClockRate
+                0x000000001a00421c       0x36 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a00421c                Chip_SSP_SetClockRate
  .text.Chip_SSP_SetBitRate
-                0x000000001a00421a       0x74 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a00421a                Chip_SSP_SetBitRate
- *fill*         0x000000001a00428e        0x2 
+                0x000000001a004252       0x74 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a004252                Chip_SSP_SetBitRate
+ *fill*         0x000000001a0042c6        0x2 
  .text.Chip_SSP_Init
-                0x000000001a004290       0x4c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
-                0x000000001a004290                Chip_SSP_Init
+                0x000000001a0042c8       0x4c build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x000000001a0042c8                Chip_SSP_Init
  .text.Chip_Clock_DisableMainPLL
-                0x000000001a0042dc       0x20 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a004314       0x20 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_SetupMainPLL
-                0x000000001a0042fc       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a004334       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_Clock_MainPLLLocked
-                0x000000001a004344       0x24 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a00437c       0x24 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .text.Chip_SetupCoreClock
-                0x000000001a004368      0x148 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
-                0x000000001a004368                Chip_SetupCoreClock
+                0x000000001a0043a0      0x148 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a0043a0                Chip_SetupCoreClock
  .text.Chip_UART_TXDisable
-                0x000000001a0044b0       0x1a build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a0044e8       0x1a build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetupFIFOS
-                0x000000001a0044ca       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004502       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_ConfigData
-                0x000000001a0044e6       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a00451e       0x1c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_EnableDivisorAccess
-                0x000000001a004502       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a00453a       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_DisableDivisorAccess
-                0x000000001a004522       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a00455a       0x20 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_SetDivisorLatches
-                0x000000001a004542       0x28 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
- *fill*         0x000000001a00456a        0x2 
+                0x000000001a00457a       0x28 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ *fill*         0x000000001a0045a2        0x2 
  .text.Chip_UART_GetIndex
-                0x000000001a00456c       0x6c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a0045a4       0x6c build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .text.Chip_UART_Init
-                0x000000001a0045d8       0x88 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a0045d8                Chip_UART_Init
+                0x000000001a004610       0x88 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004610                Chip_UART_Init
  .text.Chip_UART_SetBaudFDR
-                0x000000001a004660      0x180 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a004660                Chip_UART_SetBaudFDR
- .text          0x000000001a0047e0       0x30 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
-                0x000000001a0047e0                __aeabi_uldivmod
- .text          0x000000001a004810      0x2d0 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
-                0x000000001a004810                __udivmoddi4
- .text          0x000000001a004ae0        0x4 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
-                0x000000001a004ae0                __aeabi_ldiv0
-                0x000000001a004ae0                __aeabi_idiv0
+                0x000000001a004698      0x180 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004698                Chip_UART_SetBaudFDR
+ .text          0x000000001a004818       0x30 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
+                0x000000001a004818                __aeabi_uldivmod
+ .text          0x000000001a004848      0x2d0 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x000000001a004848                __udivmoddi4
+ .text          0x000000001a004b18        0x4 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
+                0x000000001a004b18                __aeabi_ldiv0
+                0x000000001a004b18                __aeabi_idiv0
  .text.__libc_init_array
-                0x000000001a004ae4       0x48 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
-                0x000000001a004ae4                __libc_init_array
- .text.memcpy   0x000000001a004b2c       0x1c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
-                0x000000001a004b2c                memcpy
- .text.memset   0x000000001a004b48       0x10 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
-                0x000000001a004b48                memset
+                0x000000001a004b1c       0x48 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
+                0x000000001a004b1c                __libc_init_array
+ .text.memcpy   0x000000001a004b64       0x1c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+                0x000000001a004b64                memcpy
+ .text.memset   0x000000001a004b80       0x10 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
+                0x000000001a004b80                memset
  *(.rodata .rodata.* .constdata .constdata.*)
- .rodata        0x000000001a004b58        0x7 build/obj/src/main.o
- *fill*         0x000000001a004b5f        0x1 
- .rodata        0x000000001a004b60        0x5 build/lib/modules/freertos.a(tasks.o)
- *fill*         0x000000001a004b65        0x3 
- .rodata        0x000000001a004b68        0xd build/lib/modules/freertos.a(timers.o)
- *fill*         0x000000001a004b75        0x3 
+ .rodata        0x000000001a004b90       0x2c build/obj/src/main.o
+ .rodata        0x000000001a004bbc        0x5 build/lib/modules/freertos.a(tasks.o)
+ *fill*         0x000000001a004bc1        0x3 
+ .rodata        0x000000001a004bc4        0xd build/lib/modules/freertos.a(timers.o)
+ *fill*         0x000000001a004bd1        0x3 
  .rodata.periph_to_base
-                0x000000001a004b78       0x6c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .rodata        0x000000001a004be4        0x6 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- *fill*         0x000000001a004bea        0x2 
+                0x000000001a004bd4       0x6c build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .rodata        0x000000001a004c40        0x6 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ *fill*         0x000000001a004c46        0x2 
  .rodata.ExtRateIn
-                0x000000001a004bec        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a004bec                ExtRateIn
+                0x000000001a004c48        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004c48                ExtRateIn
  .rodata.OscRateIn
-                0x000000001a004bf0        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
-                0x000000001a004bf0                OscRateIn
+                0x000000001a004c4c        0x4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004c4c                OscRateIn
  .rodata.GpioLeds
-                0x000000001a004bf4        0xc build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004c50        0xc build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .rodata.GpioButtons
-                0x000000001a004c00        0x8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x000000001a004c5c        0x8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .rodata.GpioPorts
-                0x000000001a004c08       0x12 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- *fill*         0x000000001a004c1a        0x2 
+                0x000000001a004c64       0x12 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ *fill*         0x000000001a004c76        0x2 
  .rodata.InitClkStates
-                0x000000001a004c1c        0x4 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004c78        0x4 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .rodata.pinmuxing
-                0x000000001a004c20       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x000000001a004c7c       0x74 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .rodata.InitClkStates
-                0x000000001a004c94       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x000000001a004cf0       0x48 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .rodata.UART_PClock
-                0x000000001a004cdc        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004d38        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .rodata.UART_BClock
-                0x000000001a004ce4        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
-                0x000000001a004cec                . = ALIGN (0x4)
+                0x000000001a004d40        0x8 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000001a004d48                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001a004cec                __exidx_start = .
+                0x000000001a004d48                __exidx_start = .
 
-.ARM.exidx      0x000000001a004cec        0x8
+.ARM.exidx      0x000000001a004d48        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x000000001a004cec        0x8 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
-                0x000000001a004cf4                __exidx_end = .
-                0x000000001a004cf4                _etext = .
+ .ARM.exidx     0x000000001a004d48        0x8 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x000000001a004d50                __exidx_end = .
+                0x000000001a004d50                _etext = .
 
-.rel.dyn        0x000000001a004cf4        0x0
- .rel.iplt      0x000000001a004cf4        0x0 build/obj/src/bsp.o
+.rel.dyn        0x000000001a004d50        0x0
+ .rel.iplt      0x000000001a004d50        0x0 build/obj/src/bsp.o
 
-.data_RAM2      0x0000000010080000     0xa000 load address 0x000000001a004cf4
+.data_RAM2      0x0000000010080000     0xa000 load address 0x000000001a004d50
  FILL mask 0xff
  *(.ramfunc.$RAM2)
  *(.ramfunc.$RamLoc40)
@@ -4289,7 +4522,7 @@ END GROUP
  *(.data.$RamLoc40*)
                 0x000000001008a000                . = ALIGN (0x4)
 
-.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a00ecf4
+.data_RAM3      0x0000000020000000        0x0 load address 0x000000001a00ed50
  FILL mask 0xff
  *(.ramfunc.$RAM3)
  *(.ramfunc.$RamAHB32)
@@ -4297,7 +4530,7 @@ END GROUP
  *(.data.$RamAHB32*)
                 0x0000000020000000                . = ALIGN (0x4)
 
-.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a00ecf4
+.data_RAM4      0x0000000020008000        0x0 load address 0x000000001a00ed50
  FILL mask 0xff
  *(.ramfunc.$RAM4)
  *(.ramfunc.$RamAHB16)
@@ -4305,7 +4538,7 @@ END GROUP
  *(.data.$RamAHB16*)
                 0x0000000020008000                . = ALIGN (0x4)
 
-.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a00ecf4
+.data_RAM5      0x000000002000c000        0x0 load address 0x000000001a00ed50
  FILL mask 0xff
  *(.ramfunc.$RAM5)
  *(.ramfunc.$RamAHB_ETB16)
@@ -4319,7 +4552,7 @@ END GROUP
                 0x0000000010000000                . = ALIGN (0x4)
                 0x0000000010000000                _end_uninit_RESERVED = .
 
-.data           0x0000000010000000       0x40 load address 0x000000001a00ecf4
+.data           0x0000000010000000       0x40 load address 0x000000001a00ed50
  FILL mask 0xff
                 0x0000000010000000                _data = .
  *(vtable)
@@ -4334,7 +4567,7 @@ END GROUP
                 0x0000000010000040                . = ALIGN (0x4)
                 0x0000000010000040                _edata = .
 
-.igot.plt       0x0000000010000040        0x0 load address 0x000000001a00ed34
+.igot.plt       0x0000000010000040        0x0 load address 0x000000001a00ed90
  .igot.plt      0x0000000010000040        0x0 build/obj/src/bsp.o
 
 .bss_RAM2       0x000000001008a000        0x0
@@ -4357,7 +4590,7 @@ END GROUP
  *(.bss.$RamAHB_ETB16*)
                 0x000000002000c000                . = ALIGN (0x4)
 
-.bss            0x0000000010000040      0x220
+.bss            0x0000000010000040      0x224
                 0x0000000010000040                _bss = .
  *(.bss*)
  .bss.board     0x0000000010000040       0x20 build/obj/src/bsp.o
@@ -4366,91 +4599,94 @@ END GROUP
  .bss.instances.0
                 0x0000000010000074        0xc build/obj/src/digital.o
  .bss.board     0x0000000010000080        0x4 build/obj/src/main.o
+ .bss.eventos_teclas
+                0x0000000010000084        0x4 build/obj/src/main.o
+                0x0000000010000084                eventos_teclas
  .bss.pxCurrentTCB
-                0x0000000010000084        0x4 build/lib/modules/freertos.a(tasks.o)
-                0x0000000010000084                pxCurrentTCB
+                0x0000000010000088        0x4 build/lib/modules/freertos.a(tasks.o)
+                0x0000000010000088                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x0000000010000088       0x8c build/lib/modules/freertos.a(tasks.o)
+                0x000000001000008c       0x8c build/lib/modules/freertos.a(tasks.o)
  .bss.xDelayedTaskList1
-                0x0000000010000114       0x14 build/lib/modules/freertos.a(tasks.o)
+                0x0000000010000118       0x14 build/lib/modules/freertos.a(tasks.o)
  .bss.xDelayedTaskList2
-                0x0000000010000128       0x14 build/lib/modules/freertos.a(tasks.o)
+                0x000000001000012c       0x14 build/lib/modules/freertos.a(tasks.o)
  .bss.pxDelayedTaskList
-                0x000000001000013c        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.pxOverflowDelayedTaskList
                 0x0000000010000140        0x4 build/lib/modules/freertos.a(tasks.o)
+ .bss.pxOverflowDelayedTaskList
+                0x0000000010000144        0x4 build/lib/modules/freertos.a(tasks.o)
  .bss.xPendingReadyList
-                0x0000000010000144       0x14 build/lib/modules/freertos.a(tasks.o)
+                0x0000000010000148       0x14 build/lib/modules/freertos.a(tasks.o)
  .bss.xTasksWaitingTermination
-                0x0000000010000158       0x14 build/lib/modules/freertos.a(tasks.o)
+                0x000000001000015c       0x14 build/lib/modules/freertos.a(tasks.o)
  .bss.uxDeletedTasksWaitingCleanUp
-                0x000000001000016c        0x4 build/lib/modules/freertos.a(tasks.o)
+                0x0000000010000170        0x4 build/lib/modules/freertos.a(tasks.o)
  .bss.xSuspendedTaskList
-                0x0000000010000170       0x14 build/lib/modules/freertos.a(tasks.o)
+                0x0000000010000174       0x14 build/lib/modules/freertos.a(tasks.o)
  .bss.uxCurrentNumberOfTasks
-                0x0000000010000184        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xTickCount
                 0x0000000010000188        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.uxTopReadyPriority
+ .bss.xTickCount
                 0x000000001000018c        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xSchedulerRunning
+ .bss.uxTopReadyPriority
                 0x0000000010000190        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xPendedTicks
+ .bss.xSchedulerRunning
                 0x0000000010000194        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xYieldPending
+ .bss.xPendedTicks
                 0x0000000010000198        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xNumOfOverflows
+ .bss.xYieldPending
                 0x000000001000019c        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.uxTaskNumber
+ .bss.xNumOfOverflows
                 0x00000000100001a0        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xNextTaskUnblockTime
+ .bss.uxTaskNumber
                 0x00000000100001a4        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.xIdleTaskHandle
+ .bss.xNextTaskUnblockTime
                 0x00000000100001a8        0x4 build/lib/modules/freertos.a(tasks.o)
- .bss.uxSchedulerSuspended
+ .bss.xIdleTaskHandle
                 0x00000000100001ac        0x4 build/lib/modules/freertos.a(tasks.o)
+ .bss.uxSchedulerSuspended
+                0x00000000100001b0        0x4 build/lib/modules/freertos.a(tasks.o)
  .bss.xActiveTimerList1
-                0x00000000100001b0       0x14 build/lib/modules/freertos.a(timers.o)
+                0x00000000100001b4       0x14 build/lib/modules/freertos.a(timers.o)
  .bss.xActiveTimerList2
-                0x00000000100001c4       0x14 build/lib/modules/freertos.a(timers.o)
+                0x00000000100001c8       0x14 build/lib/modules/freertos.a(timers.o)
  .bss.pxCurrentTimerList
-                0x00000000100001d8        0x4 build/lib/modules/freertos.a(timers.o)
- .bss.pxOverflowTimerList
                 0x00000000100001dc        0x4 build/lib/modules/freertos.a(timers.o)
- .bss.xTimerQueue
+ .bss.pxOverflowTimerList
                 0x00000000100001e0        0x4 build/lib/modules/freertos.a(timers.o)
- .bss.xTimerTaskHandle
+ .bss.xTimerQueue
                 0x00000000100001e4        0x4 build/lib/modules/freertos.a(timers.o)
- .bss.xLastTime.0
+ .bss.xTimerTaskHandle
                 0x00000000100001e8        0x4 build/lib/modules/freertos.a(timers.o)
+ .bss.xLastTime.0
+                0x00000000100001ec        0x4 build/lib/modules/freertos.a(timers.o)
  .bss.ucMaxSysCallPriority
-                0x00000000100001ec        0x1 build/lib/modules/freertos.a(port.o)
- *fill*         0x00000000100001ed        0x3 
+                0x00000000100001f0        0x1 build/lib/modules/freertos.a(port.o)
+ *fill*         0x00000000100001f1        0x3 
  .bss.ulMaxPRIGROUPValue
-                0x00000000100001f0        0x4 build/lib/modules/freertos.a(port.o)
- .bss.xStart    0x00000000100001f4        0x8 build/lib/modules/freertos.a(heap_4.o)
- .bss.pxEnd     0x00000000100001fc        0x4 build/lib/modules/freertos.a(heap_4.o)
+                0x00000000100001f4        0x4 build/lib/modules/freertos.a(port.o)
+ .bss.xStart    0x00000000100001f8        0x8 build/lib/modules/freertos.a(heap_4.o)
+ .bss.pxEnd     0x0000000010000200        0x4 build/lib/modules/freertos.a(heap_4.o)
  .bss.xFreeBytesRemaining
-                0x0000000010000200        0x4 build/lib/modules/freertos.a(heap_4.o)
- .bss.xMinimumEverFreeBytesRemaining
                 0x0000000010000204        0x4 build/lib/modules/freertos.a(heap_4.o)
- .bss.xNumberOfSuccessfulAllocations
+ .bss.xMinimumEverFreeBytesRemaining
                 0x0000000010000208        0x4 build/lib/modules/freertos.a(heap_4.o)
- .bss.xNumberOfSuccessfulFrees
+ .bss.xNumberOfSuccessfulAllocations
                 0x000000001000020c        0x4 build/lib/modules/freertos.a(heap_4.o)
- .bss.xBlockAllocatedBit
+ .bss.xNumberOfSuccessfulFrees
                 0x0000000010000210        0x4 build/lib/modules/freertos.a(heap_4.o)
+ .bss.xBlockAllocatedBit
+                0x0000000010000214        0x4 build/lib/modules/freertos.a(heap_4.o)
  .bss.xQueueRegistry
-                0x0000000010000214       0x40 build/lib/modules/freertos.a(queue.o)
-                0x0000000010000214                xQueueRegistry
+                0x0000000010000218       0x40 build/lib/modules/freertos.a(queue.o)
+                0x0000000010000218                xQueueRegistry
  .bss.SystemCoreClock
-                0x0000000010000254        0x4 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
-                0x0000000010000254                SystemCoreClock
+                0x0000000010000258        0x4 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+                0x0000000010000258                SystemCoreClock
  .bss.audio_usb_pll_freq
-                0x0000000010000258        0x8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x000000001000025c        0x8 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  *(COMMON)
-                0x0000000010000260                . = ALIGN (0x4)
-                0x0000000010000260                _ebss = .
+                0x0000000010000264                . = ALIGN (0x4)
+                0x0000000010000264                _ebss = .
                 [!provide]                        PROVIDE (end = .)
 
 .noinit_RAM2    0x000000001008a000        0x0
@@ -4473,136 +4709,141 @@ END GROUP
  *(.noinit.$RamAHB_ETB16*)
                 0x000000002000c000                . = ALIGN (0x4)
 
-.noinit         0x0000000010000260        0x0
-                0x0000000010000260                _noinit = .
+.noinit         0x0000000010000264        0x0
+                0x0000000010000264                _noinit = .
  *(.noinit*)
-                0x0000000010000260                . = ALIGN (0x4)
-                0x0000000010000260                _end_noinit = .
+                0x0000000010000264                . = ALIGN (0x4)
+                0x0000000010000264                _end_noinit = .
                 [!provide]                        PROVIDE (_pvHeapStart = .)
                 0x0000000010008000                PROVIDE (_vStackTop = (__top_RamLoc32 - 0x0))
-                0xffffffff53ff4bbe                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
+                0xffffffff53ff4b86                PROVIDE (__valid_user_code_checksum = (0x0 - ((((((_vStackTop + (Reset_Handler + 0x1)) + (NMI_Handler + 0x1)) + (HardFault_Handler + 0x1)) + (DEFINED (MemManage_Handler)?MemManage_Handler:0x0 + 0x1)) + (DEFINED (BusFault_Handler)?BusFault_Handler:0x0 + 0x1)) + (DEFINED (UsageFault_Handler)?UsageFault_Handler:0x0 + 0x1))))
 OUTPUT(build/bin/TPN10_Lizarraga.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_info     0x0000000000000000    0x11b07
+.debug_info     0x0000000000000000    0x125ac
  .debug_info    0x0000000000000000      0xfab build/obj/src/bsp.o
  .debug_info    0x0000000000000fab      0x6d8 build/obj/src/digital.o
- .debug_info    0x0000000000001683      0x684 build/obj/src/main.o
- .debug_info    0x0000000000001d07     0x26d4 build/lib/modules/freertos.a(tasks.o)
- .debug_info    0x00000000000043db     0x135e build/lib/modules/freertos.a(timers.o)
- .debug_info    0x0000000000005739      0x9cb build/lib/modules/freertos.a(port.o)
- .debug_info    0x0000000000006104      0x98f build/lib/modules/freertos.a(heap_4.o)
- .debug_info    0x0000000000006a93      0x2d8 build/lib/modules/freertos.a(list.o)
- .debug_info    0x0000000000006d6b     0x1c97 build/lib/modules/freertos.a(queue.o)
- .debug_info    0x0000000000008a02      0x603 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_info    0x0000000000009005      0x2b5 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_info    0x00000000000092ba      0xa65 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_info    0x0000000000009d1f     0x1678 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_info    0x000000000000b397      0x33e build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_info    0x000000000000b6d5     0x14c8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_info    0x000000000000cb9d      0xbce build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_info    0x000000000000d76b      0x9c1 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_info    0x000000000000e12c      0x1e1 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_info    0x000000000000e30d     0x10f4 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_info    0x000000000000f401      0xc7d build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_info    0x000000000001007e      0x921 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_info    0x000000000001099f     0x1168 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_info    0x0000000000001683      0x76b build/obj/src/main.o
+ .debug_info    0x0000000000001dee      0x9be build/lib/modules/freertos.a(event_groups.o)
+ .debug_info    0x00000000000027ac      0x2d8 build/lib/modules/freertos.a(list.o)
+ .debug_info    0x0000000000002a84     0x26d4 build/lib/modules/freertos.a(tasks.o)
+ .debug_info    0x0000000000005158     0x135e build/lib/modules/freertos.a(timers.o)
+ .debug_info    0x00000000000064b6      0x9cb build/lib/modules/freertos.a(port.o)
+ .debug_info    0x0000000000006e81      0x98f build/lib/modules/freertos.a(heap_4.o)
+ .debug_info    0x0000000000007810     0x1c97 build/lib/modules/freertos.a(queue.o)
+ .debug_info    0x00000000000094a7      0x603 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_info    0x0000000000009aaa      0x2b5 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_info    0x0000000000009d5f      0xa65 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_info    0x000000000000a7c4     0x1678 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_info    0x000000000000be3c      0x33e build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_info    0x000000000000c17a     0x14c8 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_info    0x000000000000d642      0xbce build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_info    0x000000000000e210      0x9c1 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_info    0x000000000000ebd1      0x1e1 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_info    0x000000000000edb2     0x10f4 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_info    0x000000000000fea6      0xc7d build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_info    0x0000000000010b23      0x921 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_info    0x0000000000011444     0x1168 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_abbrev   0x0000000000000000     0x2c4d
+.debug_abbrev   0x0000000000000000     0x2ec2
  .debug_abbrev  0x0000000000000000      0x286 build/obj/src/bsp.o
  .debug_abbrev  0x0000000000000286      0x1fa build/obj/src/digital.o
- .debug_abbrev  0x0000000000000480      0x109 build/obj/src/main.o
- .debug_abbrev  0x0000000000000589      0x2f5 build/lib/modules/freertos.a(tasks.o)
- .debug_abbrev  0x000000000000087e      0x285 build/lib/modules/freertos.a(timers.o)
- .debug_abbrev  0x0000000000000b03      0x26b build/lib/modules/freertos.a(port.o)
- .debug_abbrev  0x0000000000000d6e      0x224 build/lib/modules/freertos.a(heap_4.o)
- .debug_abbrev  0x0000000000000f92       0xf2 build/lib/modules/freertos.a(list.o)
- .debug_abbrev  0x0000000000001084      0x2b2 build/lib/modules/freertos.a(queue.o)
- .debug_abbrev  0x0000000000001336       0xfc build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_abbrev  0x0000000000001432       0xfd build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_abbrev  0x000000000000152f      0x173 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_abbrev  0x00000000000016a2      0x2fc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_abbrev  0x000000000000199e       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_abbrev  0x0000000000001a9b      0x394 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_abbrev  0x0000000000001e2f      0x1d0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_abbrev  0x0000000000001fff      0x1d2 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_abbrev  0x00000000000021d1       0xe7 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_abbrev  0x00000000000022b8      0x298 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_abbrev  0x0000000000002550      0x262 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_abbrev  0x00000000000027b2      0x196 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_abbrev  0x0000000000002948      0x305 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_abbrev  0x0000000000000480      0x154 build/obj/src/main.o
+ .debug_abbrev  0x00000000000005d4      0x22a build/lib/modules/freertos.a(event_groups.o)
+ .debug_abbrev  0x00000000000007fe       0xf2 build/lib/modules/freertos.a(list.o)
+ .debug_abbrev  0x00000000000008f0      0x2f5 build/lib/modules/freertos.a(tasks.o)
+ .debug_abbrev  0x0000000000000be5      0x285 build/lib/modules/freertos.a(timers.o)
+ .debug_abbrev  0x0000000000000e6a      0x26b build/lib/modules/freertos.a(port.o)
+ .debug_abbrev  0x00000000000010d5      0x224 build/lib/modules/freertos.a(heap_4.o)
+ .debug_abbrev  0x00000000000012f9      0x2b2 build/lib/modules/freertos.a(queue.o)
+ .debug_abbrev  0x00000000000015ab       0xfc build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_abbrev  0x00000000000016a7       0xfd build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_abbrev  0x00000000000017a4      0x173 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_abbrev  0x0000000000001917      0x2fc build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_abbrev  0x0000000000001c13       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_abbrev  0x0000000000001d10      0x394 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_abbrev  0x00000000000020a4      0x1d0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_abbrev  0x0000000000002274      0x1d2 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_abbrev  0x0000000000002446       0xe7 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_abbrev  0x000000000000252d      0x298 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_abbrev  0x00000000000027c5      0x262 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_abbrev  0x0000000000002a27      0x196 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_abbrev  0x0000000000002bbd      0x305 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_aranges  0x0000000000000000      0xe68
+.debug_aranges  0x0000000000000000      0xf18
  .debug_aranges
                 0x0000000000000000       0x60 build/obj/src/bsp.o
  .debug_aranges
                 0x0000000000000060       0xa0 build/obj/src/digital.o
  .debug_aranges
-                0x0000000000000100       0x28 build/obj/src/main.o
+                0x0000000000000100       0x50 build/obj/src/main.o
  .debug_aranges
-                0x0000000000000128      0x208 build/lib/modules/freertos.a(tasks.o)
+                0x0000000000000150       0x88 build/lib/modules/freertos.a(event_groups.o)
  .debug_aranges
-                0x0000000000000330       0xe8 build/lib/modules/freertos.a(timers.o)
+                0x00000000000001d8       0x40 build/lib/modules/freertos.a(list.o)
  .debug_aranges
-                0x0000000000000418       0x80 build/lib/modules/freertos.a(port.o)
+                0x0000000000000218      0x208 build/lib/modules/freertos.a(tasks.o)
  .debug_aranges
-                0x0000000000000498       0x58 build/lib/modules/freertos.a(heap_4.o)
+                0x0000000000000420       0xe8 build/lib/modules/freertos.a(timers.o)
  .debug_aranges
-                0x00000000000004f0       0x40 build/lib/modules/freertos.a(list.o)
+                0x0000000000000508       0x80 build/lib/modules/freertos.a(port.o)
  .debug_aranges
-                0x0000000000000530      0x140 build/lib/modules/freertos.a(queue.o)
+                0x0000000000000588       0x58 build/lib/modules/freertos.a(heap_4.o)
  .debug_aranges
-                0x0000000000000670       0x28 build/lib/boards/edu-ciaa-nxp.a(board.o)
+                0x00000000000005e0      0x140 build/lib/modules/freertos.a(queue.o)
  .debug_aranges
-                0x0000000000000698       0x90 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x0000000000000720       0x28 build/lib/boards/edu-ciaa-nxp.a(board.o)
  .debug_aranges
-                0x0000000000000728       0x40 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+                0x0000000000000748       0x90 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
  .debug_aranges
-                0x0000000000000768      0x138 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x00000000000007d8       0x40 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
  .debug_aranges
-                0x00000000000008a0       0x28 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x0000000000000818      0x138 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .debug_aranges
-                0x00000000000008c8      0x130 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x0000000000000950       0x28 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
  .debug_aranges
-                0x00000000000009f8       0x48 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x0000000000000978      0x130 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .debug_aranges
-                0x0000000000000a40       0x98 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x0000000000000aa8       0x48 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .debug_aranges
-                0x0000000000000ad8       0x28 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+                0x0000000000000af0       0x98 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .debug_aranges
-                0x0000000000000b00      0x118 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x0000000000000b88       0x28 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
  .debug_aranges
-                0x0000000000000c18       0xe8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x0000000000000bb0      0x118 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .debug_aranges
-                0x0000000000000d00       0x50 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x0000000000000cc8       0xe8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .debug_aranges
-                0x0000000000000d50      0x118 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x0000000000000db0       0x50 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_aranges
+                0x0000000000000e00      0x118 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_ranges   0x0000000000000000      0xd38
+.debug_ranges   0x0000000000000000      0xdd8
  .debug_ranges  0x0000000000000000       0x50 build/obj/src/bsp.o
  .debug_ranges  0x0000000000000050       0x90 build/obj/src/digital.o
- .debug_ranges  0x00000000000000e0       0x18 build/obj/src/main.o
- .debug_ranges  0x00000000000000f8      0x1f8 build/lib/modules/freertos.a(tasks.o)
- .debug_ranges  0x00000000000002f0       0xd8 build/lib/modules/freertos.a(timers.o)
- .debug_ranges  0x00000000000003c8       0x70 build/lib/modules/freertos.a(port.o)
- .debug_ranges  0x0000000000000438       0x48 build/lib/modules/freertos.a(heap_4.o)
- .debug_ranges  0x0000000000000480       0x30 build/lib/modules/freertos.a(list.o)
- .debug_ranges  0x00000000000004b0      0x130 build/lib/modules/freertos.a(queue.o)
- .debug_ranges  0x00000000000005e0       0x18 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_ranges  0x00000000000005f8       0x80 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_ranges  0x0000000000000678       0x30 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_ranges  0x00000000000006a8      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_ranges  0x00000000000007e8       0x18 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_ranges  0x0000000000000800      0x120 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_ranges  0x0000000000000920       0x38 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_ranges  0x0000000000000958       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_ranges  0x00000000000009e0       0x18 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_ranges  0x00000000000009f8      0x108 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_ranges  0x0000000000000b00       0xd8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_ranges  0x0000000000000bd8       0x40 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_ranges  0x0000000000000c18      0x120 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_ranges  0x00000000000000e0       0x40 build/obj/src/main.o
+ .debug_ranges  0x0000000000000120       0x78 build/lib/modules/freertos.a(event_groups.o)
+ .debug_ranges  0x0000000000000198       0x30 build/lib/modules/freertos.a(list.o)
+ .debug_ranges  0x00000000000001c8      0x1f8 build/lib/modules/freertos.a(tasks.o)
+ .debug_ranges  0x00000000000003c0       0xd8 build/lib/modules/freertos.a(timers.o)
+ .debug_ranges  0x0000000000000498       0x70 build/lib/modules/freertos.a(port.o)
+ .debug_ranges  0x0000000000000508       0x48 build/lib/modules/freertos.a(heap_4.o)
+ .debug_ranges  0x0000000000000550      0x130 build/lib/modules/freertos.a(queue.o)
+ .debug_ranges  0x0000000000000680       0x18 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_ranges  0x0000000000000698       0x80 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_ranges  0x0000000000000718       0x30 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_ranges  0x0000000000000748      0x140 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_ranges  0x0000000000000888       0x18 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_ranges  0x00000000000008a0      0x120 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_ranges  0x00000000000009c0       0x38 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_ranges  0x00000000000009f8       0x88 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_ranges  0x0000000000000a80       0x18 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_ranges  0x0000000000000a98      0x108 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_ranges  0x0000000000000ba0       0xd8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_ranges  0x0000000000000c78       0x40 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_ranges  0x0000000000000cb8      0x120 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_macro    0x0000000000000000     0xc3f9
+.debug_macro    0x0000000000000000     0xc9bb
  .debug_macro   0x0000000000000000      0x332 build/obj/src/bsp.o
  .debug_macro   0x0000000000000332      0xa9c build/obj/src/bsp.o
  .debug_macro   0x0000000000000dce       0x22 build/obj/src/bsp.o
@@ -4661,151 +4902,155 @@ LOAD linker stubs
  .debug_macro   0x0000000000004ced       0x40 build/obj/src/bsp.o
  .debug_macro   0x0000000000004d2d      0x130 build/obj/src/bsp.o
  .debug_macro   0x0000000000004e5d      0x325 build/obj/src/digital.o
- .debug_macro   0x0000000000005182      0x50e build/obj/src/main.o
- .debug_macro   0x0000000000005690      0x174 build/obj/src/main.o
- .debug_macro   0x0000000000005804       0x6c build/obj/src/main.o
- .debug_macro   0x0000000000005870       0x11 build/obj/src/main.o
- .debug_macro   0x0000000000005881       0x64 build/obj/src/main.o
- .debug_macro   0x00000000000058e5       0x1e build/obj/src/main.o
- .debug_macro   0x0000000000005903       0x35 build/obj/src/main.o
- .debug_macro   0x0000000000005938       0x34 build/obj/src/main.o
- .debug_macro   0x000000000000596c       0x16 build/obj/src/main.o
- .debug_macro   0x0000000000005982       0x35 build/obj/src/main.o
- .debug_macro   0x00000000000059b7      0x341 build/obj/src/main.o
- .debug_macro   0x0000000000005cf8       0x10 build/obj/src/main.o
- .debug_macro   0x0000000000005d08       0x16 build/obj/src/main.o
- .debug_macro   0x0000000000005d1e       0x43 build/obj/src/main.o
- .debug_macro   0x0000000000005d61       0x34 build/obj/src/main.o
- .debug_macro   0x0000000000005d95       0x10 build/obj/src/main.o
- .debug_macro   0x0000000000005da5       0x58 build/obj/src/main.o
- .debug_macro   0x0000000000005dfd      0x182 build/obj/src/main.o
- .debug_macro   0x0000000000005f7f       0x10 build/obj/src/main.o
- .debug_macro   0x0000000000005f8f       0x1c build/obj/src/main.o
- .debug_macro   0x0000000000005fab       0x52 build/obj/src/main.o
- .debug_macro   0x0000000000005ffd       0x22 build/obj/src/main.o
- .debug_macro   0x000000000000601f       0x10 build/obj/src/main.o
- .debug_macro   0x000000000000602f       0x52 build/obj/src/main.o
- .debug_macro   0x0000000000006081       0xd5 build/obj/src/main.o
- .debug_macro   0x0000000000006156       0x1c build/obj/src/main.o
- .debug_macro   0x0000000000006172       0x3d build/obj/src/main.o
- .debug_macro   0x00000000000061af       0x16 build/obj/src/main.o
- .debug_macro   0x00000000000061c5      0x16f build/obj/src/main.o
- .debug_macro   0x0000000000006334       0x20 build/obj/src/main.o
- .debug_macro   0x0000000000006354      0x109 build/obj/src/main.o
- .debug_macro   0x000000000000645d      0x180 build/obj/src/main.o
- .debug_macro   0x00000000000065dd      0x15a build/obj/src/main.o
- .debug_macro   0x0000000000006737       0xea build/obj/src/main.o
- .debug_macro   0x0000000000006821       0x1c build/obj/src/main.o
- .debug_macro   0x000000000000683d       0x26 build/obj/src/main.o
- .debug_macro   0x0000000000006863      0x4c5 build/obj/src/main.o
- .debug_macro   0x0000000000006d28       0xb5 build/obj/src/main.o
- .debug_macro   0x0000000000006ddd      0x120 build/obj/src/main.o
- .debug_macro   0x0000000000006efd      0x600 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x00000000000074fd       0x5e build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x000000000000755b       0x94 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x00000000000075ef       0x16 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x0000000000007605      0x10e build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x0000000000007713       0x8d build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x00000000000077a0       0x57 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x00000000000077f7       0x16 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x000000000000780d       0x29 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x0000000000007836       0x16 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x000000000000784c       0x1c build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x0000000000007868       0x91 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x00000000000078f9       0x10 build/lib/modules/freertos.a(tasks.o)
- .debug_macro   0x0000000000007909      0x568 build/lib/modules/freertos.a(timers.o)
- .debug_macro   0x0000000000007e71       0x80 build/lib/modules/freertos.a(timers.o)
- .debug_macro   0x0000000000007ef1       0x97 build/lib/modules/freertos.a(timers.o)
- .debug_macro   0x0000000000007f88      0x5c0 build/lib/modules/freertos.a(port.o)
- .debug_macro   0x0000000000008548      0x53a build/lib/modules/freertos.a(heap_4.o)
- .debug_macro   0x0000000000008a82      0x51f build/lib/modules/freertos.a(list.o)
- .debug_macro   0x0000000000008fa1      0x5a3 build/lib/modules/freertos.a(queue.o)
- .debug_macro   0x0000000000009544      0x495 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_macro   0x00000000000099d9       0x73 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_macro   0x0000000000009a4c       0x97 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_macro   0x0000000000009ae3       0xfd build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_macro   0x0000000000009be0      0x186 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_macro   0x0000000000009d66       0x1d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_macro   0x0000000000009d83      0x315 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_macro   0x000000000000a098      0x31b build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_macro   0x000000000000a3b3      0x48c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_macro   0x000000000000a83f      0x49e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_macro   0x000000000000acdd      0x48c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_macro   0x000000000000b169      0x315 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_macro   0x000000000000b47e      0x315 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_macro   0x000000000000b793      0x327 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_macro   0x000000000000baba      0x315 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_macro   0x000000000000bdcf      0x315 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_macro   0x000000000000c0e4      0x315 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_macro   0x0000000000005182      0x562 build/obj/src/main.o
+ .debug_macro   0x00000000000056e4      0x174 build/obj/src/main.o
+ .debug_macro   0x0000000000005858       0x6c build/obj/src/main.o
+ .debug_macro   0x00000000000058c4       0x11 build/obj/src/main.o
+ .debug_macro   0x00000000000058d5       0x64 build/obj/src/main.o
+ .debug_macro   0x0000000000005939       0x1e build/obj/src/main.o
+ .debug_macro   0x0000000000005957       0x35 build/obj/src/main.o
+ .debug_macro   0x000000000000598c       0x34 build/obj/src/main.o
+ .debug_macro   0x00000000000059c0       0x16 build/obj/src/main.o
+ .debug_macro   0x00000000000059d6       0x35 build/obj/src/main.o
+ .debug_macro   0x0000000000005a0b      0x341 build/obj/src/main.o
+ .debug_macro   0x0000000000005d4c       0x10 build/obj/src/main.o
+ .debug_macro   0x0000000000005d5c       0x16 build/obj/src/main.o
+ .debug_macro   0x0000000000005d72       0x43 build/obj/src/main.o
+ .debug_macro   0x0000000000005db5       0x34 build/obj/src/main.o
+ .debug_macro   0x0000000000005de9       0x10 build/obj/src/main.o
+ .debug_macro   0x0000000000005df9       0x58 build/obj/src/main.o
+ .debug_macro   0x0000000000005e51      0x182 build/obj/src/main.o
+ .debug_macro   0x0000000000005fd3       0x10 build/obj/src/main.o
+ .debug_macro   0x0000000000005fe3       0x1c build/obj/src/main.o
+ .debug_macro   0x0000000000005fff       0x52 build/obj/src/main.o
+ .debug_macro   0x0000000000006051       0x22 build/obj/src/main.o
+ .debug_macro   0x0000000000006073       0x10 build/obj/src/main.o
+ .debug_macro   0x0000000000006083       0x52 build/obj/src/main.o
+ .debug_macro   0x00000000000060d5       0xd5 build/obj/src/main.o
+ .debug_macro   0x00000000000061aa       0x1c build/obj/src/main.o
+ .debug_macro   0x00000000000061c6       0x3d build/obj/src/main.o
+ .debug_macro   0x0000000000006203       0x16 build/obj/src/main.o
+ .debug_macro   0x0000000000006219      0x16f build/obj/src/main.o
+ .debug_macro   0x0000000000006388       0x20 build/obj/src/main.o
+ .debug_macro   0x00000000000063a8      0x109 build/obj/src/main.o
+ .debug_macro   0x00000000000064b1      0x180 build/obj/src/main.o
+ .debug_macro   0x0000000000006631      0x15a build/obj/src/main.o
+ .debug_macro   0x000000000000678b       0xea build/obj/src/main.o
+ .debug_macro   0x0000000000006875       0x1c build/obj/src/main.o
+ .debug_macro   0x0000000000006891       0x26 build/obj/src/main.o
+ .debug_macro   0x00000000000068b7      0x4c5 build/obj/src/main.o
+ .debug_macro   0x0000000000006d7c       0xb5 build/obj/src/main.o
+ .debug_macro   0x0000000000006e31      0x120 build/obj/src/main.o
+ .debug_macro   0x0000000000006f51       0x91 build/obj/src/main.o
+ .debug_macro   0x0000000000006fe2      0x56e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007550       0x5e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x00000000000075ae       0x94 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007642       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007658      0x10e build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007766       0x8d build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x00000000000077f3       0x57 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x000000000000784a       0x16 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007860       0x29 build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x0000000000007889       0x1c build/lib/modules/freertos.a(event_groups.o)
+ .debug_macro   0x00000000000078a5      0x51f build/lib/modules/freertos.a(list.o)
+ .debug_macro   0x0000000000007dc4      0x600 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x00000000000083c4       0x16 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x00000000000083da       0x10 build/lib/modules/freertos.a(tasks.o)
+ .debug_macro   0x00000000000083ea      0x568 build/lib/modules/freertos.a(timers.o)
+ .debug_macro   0x0000000000008952       0x80 build/lib/modules/freertos.a(timers.o)
+ .debug_macro   0x00000000000089d2       0x97 build/lib/modules/freertos.a(timers.o)
+ .debug_macro   0x0000000000008a69      0x5c0 build/lib/modules/freertos.a(port.o)
+ .debug_macro   0x0000000000009029      0x53a build/lib/modules/freertos.a(heap_4.o)
+ .debug_macro   0x0000000000009563      0x5a3 build/lib/modules/freertos.a(queue.o)
+ .debug_macro   0x0000000000009b06      0x495 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_macro   0x0000000000009f9b       0x73 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_macro   0x000000000000a00e       0x97 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_macro   0x000000000000a0a5       0xfd build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_macro   0x000000000000a1a2      0x186 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_macro   0x000000000000a328       0x1d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_macro   0x000000000000a345      0x315 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_macro   0x000000000000a65a      0x31b build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_macro   0x000000000000a975      0x48c build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_macro   0x000000000000ae01      0x49e build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_macro   0x000000000000b29f      0x48c build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_macro   0x000000000000b72b      0x315 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_macro   0x000000000000ba40      0x315 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_macro   0x000000000000bd55      0x327 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_macro   0x000000000000c07c      0x315 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_macro   0x000000000000c391      0x315 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_macro   0x000000000000c6a6      0x315 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_line     0x0000000000000000    0x11c36
+.debug_line     0x0000000000000000    0x12bcb
  .debug_line    0x0000000000000000      0x92c build/obj/src/bsp.o
  .debug_line    0x000000000000092c      0xa5b build/obj/src/digital.o
- .debug_line    0x0000000000001387      0xaa2 build/obj/src/main.o
- .debug_line    0x0000000000001e29     0x21b7 build/lib/modules/freertos.a(tasks.o)
- .debug_line    0x0000000000003fe0     0x115f build/lib/modules/freertos.a(timers.o)
- .debug_line    0x000000000000513f      0xd57 build/lib/modules/freertos.a(port.o)
- .debug_line    0x0000000000005e96      0xdc0 build/lib/modules/freertos.a(heap_4.o)
- .debug_line    0x0000000000006c56      0xb75 build/lib/modules/freertos.a(list.o)
- .debug_line    0x00000000000077cb     0x1a83 build/lib/modules/freertos.a(queue.o)
- .debug_line    0x000000000000924e      0x9a6 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_line    0x0000000000009bf4      0x20d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_line    0x0000000000009e01      0x819 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_line    0x000000000000a61a     0x1116 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_line    0x000000000000b730      0x965 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_line    0x000000000000c095      0xdba build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_line    0x000000000000ce4f      0xa2d build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_line    0x000000000000d87c      0x9f9 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_line    0x000000000000e275      0x783 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_line    0x000000000000e9f8      0xe2b build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_line    0x000000000000f823      0xdf9 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_line    0x000000000001061c      0x901 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_line    0x0000000000010f1d      0xd19 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_line    0x0000000000001387      0xb33 build/obj/src/main.o
+ .debug_line    0x0000000000001eba      0xf04 build/lib/modules/freertos.a(event_groups.o)
+ .debug_line    0x0000000000002dbe      0xb75 build/lib/modules/freertos.a(list.o)
+ .debug_line    0x0000000000003933     0x21b7 build/lib/modules/freertos.a(tasks.o)
+ .debug_line    0x0000000000005aea     0x115f build/lib/modules/freertos.a(timers.o)
+ .debug_line    0x0000000000006c49      0xd57 build/lib/modules/freertos.a(port.o)
+ .debug_line    0x00000000000079a0      0xdc0 build/lib/modules/freertos.a(heap_4.o)
+ .debug_line    0x0000000000008760     0x1a83 build/lib/modules/freertos.a(queue.o)
+ .debug_line    0x000000000000a1e3      0x9a6 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_line    0x000000000000ab89      0x20d build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_line    0x000000000000ad96      0x819 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_line    0x000000000000b5af     0x1116 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_line    0x000000000000c6c5      0x965 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_line    0x000000000000d02a      0xdba build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_line    0x000000000000dde4      0xa2d build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_line    0x000000000000e811      0x9f9 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_line    0x000000000000f20a      0x783 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_line    0x000000000000f98d      0xe2b build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_line    0x00000000000107b8      0xdf9 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_line    0x00000000000115b1      0x901 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_line    0x0000000000011eb2      0xd19 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 
-.debug_str      0x0000000000000000    0x26ea4
+.debug_str      0x0000000000000000    0x2739d
  .debug_str     0x0000000000000000    0x17912 build/obj/src/bsp.o
                                       0x17b6c (size before relaxing)
  .debug_str     0x0000000000017912      0x1bf build/obj/src/digital.o
                                       0x16a61 (size before relaxing)
- .debug_str     0x0000000000017ad1     0x8cdc build/obj/src/main.o
-                                      0x1ffd9 (size before relaxing)
- .debug_str     0x00000000000207ad     0x1f1a build/lib/modules/freertos.a(tasks.o)
-                                      0x21ed2 (size before relaxing)
- .debug_str     0x00000000000226c7      0xd1c build/lib/modules/freertos.a(timers.o)
-                                      0x2165d (size before relaxing)
- .debug_str     0x00000000000233e3      0x803 build/lib/modules/freertos.a(port.o)
-                                      0x20787 (size before relaxing)
- .debug_str     0x0000000000023be6      0x34e build/lib/modules/freertos.a(heap_4.o)
-                                      0x20361 (size before relaxing)
- .debug_str     0x0000000000023f34       0xbc build/lib/modules/freertos.a(list.o)
+ .debug_str     0x0000000000017ad1     0x962f build/obj/src/main.o
+                                      0x2092c (size before relaxing)
+ .debug_str     0x0000000000021100      0x5b6 build/lib/modules/freertos.a(event_groups.o)
+                                      0x202de (size before relaxing)
+ .debug_str     0x00000000000216b6       0xc7 build/lib/modules/freertos.a(list.o)
                                       0x1e4c7 (size before relaxing)
- .debug_str     0x0000000000023ff0      0x82c build/lib/modules/freertos.a(queue.o)
+ .debug_str     0x000000000002177d     0x150a build/lib/modules/freertos.a(tasks.o)
+                                      0x21ed2 (size before relaxing)
+ .debug_str     0x0000000000022c87      0xd1c build/lib/modules/freertos.a(timers.o)
+                                      0x2165d (size before relaxing)
+ .debug_str     0x00000000000239a3      0x803 build/lib/modules/freertos.a(port.o)
+                                      0x20787 (size before relaxing)
+ .debug_str     0x00000000000241a6      0x343 build/lib/modules/freertos.a(heap_4.o)
+                                      0x20361 (size before relaxing)
+ .debug_str     0x00000000000244e9      0x82c build/lib/modules/freertos.a(queue.o)
                                       0x211a5 (size before relaxing)
- .debug_str     0x000000000002481c       0x5e build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_str     0x0000000000024d15       0x5e build/lib/boards/edu-ciaa-nxp.a(board.o)
                                       0x1baff (size before relaxing)
- .debug_str     0x000000000002487a      0x1f6 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_str     0x0000000000024d73      0x1f6 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
                                        0x2f4b (size before relaxing)
- .debug_str     0x0000000000024a70      0x2ad build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_str     0x0000000000024f69      0x2ad build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
                                       0x1753c (size before relaxing)
- .debug_str     0x0000000000024d1d      0x662 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_str     0x0000000000025216      0x662 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
                                       0x17ac9 (size before relaxing)
- .debug_str     0x000000000002537f       0x92 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_str     0x0000000000025878       0x92 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
                                       0x1a8e4 (size before relaxing)
- .debug_str     0x0000000000025411      0x815 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_str     0x000000000002590a      0x815 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
                                       0x1bb80 (size before relaxing)
- .debug_str     0x0000000000025c26      0x129 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_str     0x000000000002611f      0x129 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
                                       0x1b5e7 (size before relaxing)
- .debug_str     0x0000000000025d4f      0x240 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_str     0x0000000000026248      0x240 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
                                       0x17069 (size before relaxing)
- .debug_str     0x0000000000025f8f       0x7e build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_str     0x0000000000026488       0x7e build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
                                       0x1685c (size before relaxing)
- .debug_str     0x000000000002600d      0x5eb build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_str     0x0000000000026506      0x5eb build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
                                       0x17804 (size before relaxing)
- .debug_str     0x00000000000265f8      0x437 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_str     0x0000000000026af1      0x437 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
                                       0x17263 (size before relaxing)
- .debug_str     0x0000000000026a2f       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_str     0x0000000000026f28       0xfd build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
                                       0x1750e (size before relaxing)
- .debug_str     0x0000000000026b2c      0x378 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_str     0x0000000000027025      0x378 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
                                       0x17684 (size before relaxing)
 
 .comment        0x0000000000000000       0x49
@@ -4813,11 +5058,12 @@ LOAD linker stubs
                                          0x4a (size before relaxing)
  .comment       0x0000000000000049       0x4a build/obj/src/digital.o
  .comment       0x0000000000000049       0x4a build/obj/src/main.o
+ .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(event_groups.o)
+ .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(list.o)
  .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(tasks.o)
  .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(timers.o)
  .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(port.o)
  .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(heap_4.o)
- .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(list.o)
  .comment       0x0000000000000049       0x4a build/lib/modules/freertos.a(queue.o)
  .comment       0x0000000000000049       0x4a build/lib/boards/edu-ciaa-nxp.a(board.o)
  .comment       0x0000000000000049       0x4a build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
@@ -4842,88 +5088,93 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000000000000064       0x32 build/obj/src/main.o
  .ARM.attributes
-                0x0000000000000096       0x32 build/lib/modules/freertos.a(tasks.o)
+                0x0000000000000096       0x32 build/lib/modules/freertos.a(event_groups.o)
  .ARM.attributes
-                0x00000000000000c8       0x32 build/lib/modules/freertos.a(timers.o)
+                0x00000000000000c8       0x32 build/lib/modules/freertos.a(list.o)
  .ARM.attributes
-                0x00000000000000fa       0x32 build/lib/modules/freertos.a(port.o)
+                0x00000000000000fa       0x32 build/lib/modules/freertos.a(tasks.o)
  .ARM.attributes
-                0x000000000000012c       0x32 build/lib/modules/freertos.a(heap_4.o)
+                0x000000000000012c       0x32 build/lib/modules/freertos.a(timers.o)
  .ARM.attributes
-                0x000000000000015e       0x32 build/lib/modules/freertos.a(list.o)
+                0x000000000000015e       0x32 build/lib/modules/freertos.a(port.o)
  .ARM.attributes
-                0x0000000000000190       0x32 build/lib/modules/freertos.a(queue.o)
+                0x0000000000000190       0x32 build/lib/modules/freertos.a(heap_4.o)
  .ARM.attributes
-                0x00000000000001c2       0x32 build/lib/boards/edu-ciaa-nxp.a(board.o)
+                0x00000000000001c2       0x32 build/lib/modules/freertos.a(queue.o)
  .ARM.attributes
-                0x00000000000001f4       0x32 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+                0x00000000000001f4       0x32 build/lib/boards/edu-ciaa-nxp.a(board.o)
  .ARM.attributes
-                0x0000000000000226       0x32 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+                0x0000000000000226       0x32 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
  .ARM.attributes
-                0x0000000000000258       0x32 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+                0x0000000000000258       0x32 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
  .ARM.attributes
-                0x000000000000028a       0x32 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+                0x000000000000028a       0x32 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
  .ARM.attributes
-                0x00000000000002bc       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+                0x00000000000002bc       0x32 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
  .ARM.attributes
-                0x00000000000002ee       0x32 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+                0x00000000000002ee       0x32 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
  .ARM.attributes
-                0x0000000000000320       0x32 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+                0x0000000000000320       0x32 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
  .ARM.attributes
-                0x0000000000000352       0x32 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+                0x0000000000000352       0x32 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
  .ARM.attributes
-                0x0000000000000384       0x32 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+                0x0000000000000384       0x32 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
  .ARM.attributes
-                0x00000000000003b6       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+                0x00000000000003b6       0x32 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
  .ARM.attributes
-                0x00000000000003e8       0x32 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+                0x00000000000003e8       0x32 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
  .ARM.attributes
-                0x000000000000041a       0x32 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+                0x000000000000041a       0x32 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
  .ARM.attributes
-                0x000000000000044c       0x1e /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
+                0x000000000000044c       0x32 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
  .ARM.attributes
-                0x000000000000046a       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+                0x000000000000047e       0x1e /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x000000000000049c       0x1e /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
+                0x000000000000049c       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x00000000000004ba       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
+                0x00000000000004ce       0x1e /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000000000004ec       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+                0x00000000000004ec       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x000000000000051e       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
+                0x000000000000051e       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000000000000550       0x32 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
 
-.debug_frame    0x0000000000000000     0x3a84
+.debug_frame    0x0000000000000000     0x3d64
  .debug_frame   0x0000000000000000      0x160 build/obj/src/bsp.o
  .debug_frame   0x0000000000000160      0x294 build/obj/src/digital.o
- .debug_frame   0x00000000000003f4       0x50 build/obj/src/main.o
- .debug_frame   0x0000000000000444      0x8e0 build/lib/modules/freertos.a(tasks.o)
- .debug_frame   0x0000000000000d24      0x3d4 build/lib/modules/freertos.a(timers.o)
- .debug_frame   0x00000000000010f8      0x1a8 build/lib/modules/freertos.a(port.o)
- .debug_frame   0x00000000000012a0      0x12c build/lib/modules/freertos.a(heap_4.o)
- .debug_frame   0x00000000000013cc       0xd8 build/lib/modules/freertos.a(list.o)
- .debug_frame   0x00000000000014a4      0x580 build/lib/modules/freertos.a(queue.o)
- .debug_frame   0x0000000000001a24       0x58 build/lib/boards/edu-ciaa-nxp.a(board.o)
- .debug_frame   0x0000000000001a7c      0x1b8 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
- .debug_frame   0x0000000000001c34       0xa0 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
- .debug_frame   0x0000000000001cd4      0x568 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
- .debug_frame   0x000000000000223c       0x54 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
- .debug_frame   0x0000000000002290      0x4f4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
- .debug_frame   0x0000000000002784       0xe0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
- .debug_frame   0x0000000000002864      0x264 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
- .debug_frame   0x0000000000002ac8       0x60 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
- .debug_frame   0x0000000000002b28      0x4c8 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
- .debug_frame   0x0000000000002ff0      0x3e8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
- .debug_frame   0x00000000000033d8       0xf4 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
- .debug_frame   0x00000000000034cc      0x4e4 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
- .debug_frame   0x00000000000039b0       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x00000000000039dc       0x34 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
- .debug_frame   0x0000000000003a10       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000003a3c       0x28 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000003a64       0x20 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000000003f4      0x118 build/obj/src/main.o
+ .debug_frame   0x000000000000050c      0x218 build/lib/modules/freertos.a(event_groups.o)
+ .debug_frame   0x0000000000000724       0xd8 build/lib/modules/freertos.a(list.o)
+ .debug_frame   0x00000000000007fc      0x8e0 build/lib/modules/freertos.a(tasks.o)
+ .debug_frame   0x00000000000010dc      0x3d4 build/lib/modules/freertos.a(timers.o)
+ .debug_frame   0x00000000000014b0      0x1a8 build/lib/modules/freertos.a(port.o)
+ .debug_frame   0x0000000000001658      0x12c build/lib/modules/freertos.a(heap_4.o)
+ .debug_frame   0x0000000000001784      0x580 build/lib/modules/freertos.a(queue.o)
+ .debug_frame   0x0000000000001d04       0x58 build/lib/boards/edu-ciaa-nxp.a(board.o)
+ .debug_frame   0x0000000000001d5c      0x1b8 build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+ .debug_frame   0x0000000000001f14       0xa0 build/lib/boards/edu-ciaa-nxp.a(chip_18xx_43xx.o)
+ .debug_frame   0x0000000000001fb4      0x568 build/lib/boards/edu-ciaa-nxp.a(clock_18xx_43xx.o)
+ .debug_frame   0x000000000000251c       0x54 build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
+ .debug_frame   0x0000000000002570      0x4f4 build/lib/boards/edu-ciaa-nxp.a(board_lpcopen.o)
+ .debug_frame   0x0000000000002a64       0xe0 build/lib/boards/edu-ciaa-nxp.a(board_sysinit.o)
+ .debug_frame   0x0000000000002b44      0x264 build/lib/boards/edu-ciaa-nxp.a(adc_18xx_43xx.o)
+ .debug_frame   0x0000000000002da8       0x60 build/lib/boards/edu-ciaa-nxp.a(gpio_18xx_43xx.o)
+ .debug_frame   0x0000000000002e08      0x4c8 build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
+ .debug_frame   0x00000000000032d0      0x3e8 build/lib/boards/edu-ciaa-nxp.a(ssp_18xx_43xx.o)
+ .debug_frame   0x00000000000036b8       0xf4 build/lib/boards/edu-ciaa-nxp.a(sysinit_18xx_43xx.o)
+ .debug_frame   0x00000000000037ac      0x4e4 build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+ .debug_frame   0x0000000000003c90       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000003cbc       0x34 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000003cf0       0x2c /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000003d1c       0x28 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x0000000000003d44       0x20 /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/libc_nano.a(lib_a-memset.o)
 
 Cross Reference Table
 
 Symbol                                            File
+Amarillo                                          build/obj/src/main.o
+Azul                                              build/obj/src/main.o
 Blinking                                          build/obj/src/main.o
 BoardCreate                                       build/obj/src/bsp.o
                                                   build/obj/src/main.o
@@ -5114,6 +5365,7 @@ RingBuffer_Pop                                    build/lib/boards/edu-ciaa-nxp.
                                                   build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
 RingBuffer_PopMult                                build/lib/boards/edu-ciaa-nxp.a(ring_buffer.o)
                                                   build/lib/boards/edu-ciaa-nxp.a(uart_18xx_43xx.o)
+Rojo                                              build/obj/src/main.o
 SVC_Handler                                       build/lib/modules/freertos.a(port.o)
 SisTick_Init                                      build/obj/src/bsp.o
 SysTick_Handler                                   build/lib/modules/freertos.a(port.o)
@@ -5125,7 +5377,9 @@ SystemCoreClockUpdate                             build/lib/boards/edu-ciaa-nxp.
                                                   build/obj/src/bsp.o
 SystemInit                                        build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
                                                   build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+Teclado                                           build/obj/src/main.o
 UsageFault_Handler                                build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
+Verde                                             build/obj/src/main.o
 __aeabi_idiv0                                     /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
 __aeabi_ldiv0                                     /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_dvmd_tls.o)
                                                   /usr/local/share/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7e-m+fp/softfp/libgcc.a(_aeabi_uldivmod.o)
@@ -5153,6 +5407,7 @@ _vStackTop                                        build/lib/boards/edu-ciaa-nxp.
 bss_init                                          build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
 data_init                                         build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
 eTaskGetState                                     build/lib/modules/freertos.a(tasks.o)
+eventos_teclas                                    build/obj/src/main.o
 g_pfnVectors                                      build/lib/boards/edu-ciaa-nxp.a(armv7m_startup.o)
                                                   build/lib/boards/edu-ciaa-nxp.a(sysinit.o)
 getSlaveIndex                                     build/lib/boards/edu-ciaa-nxp.a(i2c_18xx_43xx.o)
@@ -5174,6 +5429,7 @@ pvPortMalloc                                      build/lib/modules/freertos.a(h
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 pvTaskIncrementMutexHeldCount                     build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(queue.o)
 pvTimerGetTimerID                                 build/lib/modules/freertos.a(timers.o)
@@ -5190,6 +5446,7 @@ ucHeap                                            build/lib/boards/edu-ciaa-nxp.
 ucQueueGetQueueType                               build/lib/modules/freertos.a(queue.o)
 ulTaskGenericNotifyTake                           build/lib/modules/freertos.a(tasks.o)
 ulTaskGenericNotifyValueClear                     build/lib/modules/freertos.a(tasks.o)
+uxEventGroupGetNumber                             build/lib/modules/freertos.a(event_groups.o)
 uxListRemove                                      build/lib/modules/freertos.a(list.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
@@ -5203,13 +5460,19 @@ uxTaskGetTaskNumber                               build/lib/modules/freertos.a(t
 uxTaskPriorityGet                                 build/lib/modules/freertos.a(tasks.o)
 uxTaskPriorityGetFromISR                          build/lib/modules/freertos.a(tasks.o)
 uxTaskResetEventItemValue                         build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 uxTimerGetReloadMode                              build/lib/modules/freertos.a(timers.o)
 uxTimerGetTimerNumber                             build/lib/modules/freertos.a(timers.o)
 uxTopUsedPriority                                 build/lib/modules/freertos.a(tasks.o)
+vEventGroupClearBitsCallback                      build/lib/modules/freertos.a(event_groups.o)
+vEventGroupDelete                                 build/lib/modules/freertos.a(event_groups.o)
+vEventGroupSetBitsCallback                        build/lib/modules/freertos.a(event_groups.o)
+vEventGroupSetNumber                              build/lib/modules/freertos.a(event_groups.o)
 vListInitialise                                   build/lib/modules/freertos.a(list.o)
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vListInitialiseItem                               build/lib/modules/freertos.a(list.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
@@ -5225,15 +5488,18 @@ vPortEnterCritical                                build/lib/modules/freertos.a(p
                                                   build/lib/modules/freertos.a(heap_4.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vPortExitCritical                                 build/lib/modules/freertos.a(port.o)
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(heap_4.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vPortFree                                         build/lib/modules/freertos.a(heap_4.o)
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(timers.o)
                                                   build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vPortGetHeapStats                                 build/lib/modules/freertos.a(heap_4.o)
 vPortInitialiseBlocks                             build/lib/modules/freertos.a(heap_4.o)
 vPortSetupTimerInterrupt                          build/lib/modules/freertos.a(port.o)
@@ -5262,10 +5528,12 @@ vTaskPlaceOnEventList                             build/lib/modules/freertos.a(t
 vTaskPlaceOnEventListRestricted                   build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(queue.o)
 vTaskPlaceOnUnorderedEventList                    build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vTaskPriorityDisinheritAfterTimeout               build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(queue.o)
 vTaskPrioritySet                                  build/lib/modules/freertos.a(tasks.o)
 vTaskRemoveFromUnorderedEventList                 build/lib/modules/freertos.a(tasks.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vTaskResume                                       build/lib/modules/freertos.a(tasks.o)
 vTaskSetTaskNumber                                build/lib/modules/freertos.a(tasks.o)
 vTaskSetTimeOutState                              build/lib/modules/freertos.a(tasks.o)
@@ -5276,11 +5544,21 @@ vTaskSuspendAll                                   build/lib/modules/freertos.a(t
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(heap_4.o)
                                                   build/lib/modules/freertos.a(timers.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 vTaskSwitchContext                                build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(port.o)
 vTimerSetReloadMode                               build/lib/modules/freertos.a(timers.o)
 vTimerSetTimerID                                  build/lib/modules/freertos.a(timers.o)
 vTimerSetTimerNumber                              build/lib/modules/freertos.a(timers.o)
+xEventGroupClearBits                              build/lib/modules/freertos.a(event_groups.o)
+xEventGroupClearBitsFromISR                       build/lib/modules/freertos.a(event_groups.o)
+xEventGroupCreate                                 build/lib/modules/freertos.a(event_groups.o)
+                                                  build/obj/src/main.o
+xEventGroupGetBitsFromISR                         build/lib/modules/freertos.a(event_groups.o)
+xEventGroupSetBits                                build/lib/modules/freertos.a(event_groups.o)
+xEventGroupSetBitsFromISR                         build/lib/modules/freertos.a(event_groups.o)
+xEventGroupSync                                   build/lib/modules/freertos.a(event_groups.o)
+xEventGroupWaitBits                               build/lib/modules/freertos.a(event_groups.o)
 xPortGetFreeHeapSize                              build/lib/modules/freertos.a(heap_4.o)
 xPortGetMinimumEverFreeHeapSize                   build/lib/modules/freertos.a(heap_4.o)
 xPortStartScheduler                               build/lib/modules/freertos.a(port.o)
@@ -5325,6 +5603,7 @@ xTaskGetHandle                                    build/lib/modules/freertos.a(t
 xTaskGetSchedulerState                            build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(timers.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 xTaskGetTickCount                                 build/lib/modules/freertos.a(tasks.o)
                                                   build/lib/modules/freertos.a(timers.o)
 xTaskGetTickCountFromISR                          build/lib/modules/freertos.a(tasks.o)
@@ -5340,6 +5619,7 @@ xTaskResumeAll                                    build/lib/modules/freertos.a(t
                                                   build/lib/modules/freertos.a(queue.o)
                                                   build/lib/modules/freertos.a(heap_4.o)
                                                   build/lib/modules/freertos.a(timers.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)
 xTaskResumeFromISR                                build/lib/modules/freertos.a(tasks.o)
 xTimerCreate                                      build/lib/modules/freertos.a(timers.o)
 xTimerCreateTimerTask                             build/lib/modules/freertos.a(timers.o)
@@ -5351,3 +5631,4 @@ xTimerGetTimerDaemonTaskHandle                    build/lib/modules/freertos.a(t
 xTimerIsTimerActive                               build/lib/modules/freertos.a(timers.o)
 xTimerPendFunctionCall                            build/lib/modules/freertos.a(timers.o)
 xTimerPendFunctionCallFromISR                     build/lib/modules/freertos.a(timers.o)
+                                                  build/lib/modules/freertos.a(event_groups.o)

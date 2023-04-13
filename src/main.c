@@ -54,9 +54,22 @@
 #include "FreeRTOS.h"
 #include "bsp.h"
 #include "task.h"
+#include "event_groups.h"
 #include <stdbool.h>
 
 /* === Definicion y Macros ================================================= */
+
+#define BOTON_PRUEBA_ACTIVADO (1 << 0)
+#define BOTON_PRUEBA_LIBERADO (1 << 4)
+
+#define BOTON_PRENDER_ACTIVADO (1 << 1)
+#define BOTON_PRENDER_LIBERADO (1 << 5)
+
+#define BOTON_CAMBIAR_ACTIVADO (1 << 2)
+#define BOTON_CAMBIAR_LIBERADO (1 << 6)
+
+#define BOTON_APAGAR_ACTIVADO (1 << 3)
+#define BOTON_APAGAR_LIBERADO (1 << 7)
 
 /* === Declaraciones de tipos de datos internos ============================ */
 
@@ -68,7 +81,29 @@ static board_t board;
 
 /* === Definiciones de variables externas ================================== */
 
+EventGroupHandle_t eventos_teclas;
+
 /* === Definiciones de funciones internas ================================== */
+
+void Azul(void * parameters) {
+
+}
+
+void Rojo(void * parameters) {
+
+}
+
+void Amarillo(void * parameters) {
+
+}
+
+void Verde(void * parameters) {
+
+}
+
+void Teclado(void * parameters) {
+    
+}
 
 void Blinking(void * parameters) {
     while (true) {
@@ -90,14 +125,22 @@ int main(void) {
     /* Inicializaciones y configuraciones de dispositivos */
     board = BoardCreate();
 
+    eventos_teclas = xEventGroupCreate();
+
     /* Creación de las tareas */
-    xTaskCreate(Blinking, "Baliza", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
+    //xTaskCreate(Blinking, "Baliza", configMINIMAL_STACK_SIZE, NULL, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(Azul, "Azul", configMINIMAL_STACK_SIZE, (void *)board, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(Rojo, "Rojo", configMINIMAL_STACK_SIZE, (void *)board, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(Amarillo, "Amarillo", configMINIMAL_STACK_SIZE, (void *)board, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(Verde, "Verde", configMINIMAL_STACK_SIZE, (void *)board, tskIDLE_PRIORITY + 1, NULL);
+    xTaskCreate(Teclado, "TecScan", configMINIMAL_STACK_SIZE, (void *)board, tskIDLE_PRIORITY + 1, NULL);
 
     /* Arranque del sistema operativo */
     vTaskStartScheduler();
 
     /* vTaskStartScheduler solo retorna si se detiene el sistema operativo */
     while (1) {
+
     };
 
     /* El valor de retorno es solo para evitar errores en el compilador*/

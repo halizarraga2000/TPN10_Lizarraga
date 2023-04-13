@@ -75,4 +75,7 @@ build/obj/src/main.o: \
  /home/estudiante/Proyectos/EITI/TPN10_Lizarraga/inc/bsp.h \
  /home/estudiante/Proyectos/EITI/TPN10_Lizarraga/inc/digital.h \
  /home/estudiante/Proyectos/muju/externals/freertos/include/task.h \
- /home/estudiante/Proyectos/muju/externals/freertos/include/list.h
+ /home/estudiante/Proyectos/muju/externals/freertos/include/list.h \
+ /home/estudiante/Proyectos/muju/externals/freertos/include/event_groups.h \
+ /home/estudiante/Proyectos/muju/externals/freertos/include/timers.h \
+ /home/estudiante/Proyectos/muju/externals/freertos/include/task.h
